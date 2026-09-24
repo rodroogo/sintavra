@@ -1,0 +1,95 @@
+﻿name: Build Sintavra Windows Release
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: sintavra-windows-release
+  cancel-in-progress: true
+
+jobs:
+  build-windows:
+    runs-on: windows-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install
+        run: pnpm install --frozen-lockfile
+
+      - name: Bundle browser runtimes
+        run: pnpm bundle:runtimes
+
+      - name: Typecheck
+        run: pnpm typecheck
+
+      - name: Tests
+        run: pnpm test
+
+      - name: Build web runtime
+        run: pnpm build
+
+      - name: Prepare packaged local runtime
+        shell: pwsh
+        run: |
+          Remove-Item .desktop-runtime -Recurse -Force -ErrorAction SilentlyContinue
+          New-Item -ItemType Directory .desktop-runtime | Out-Null
+
+          Copy-Item dist .desktop-runtime/dist -Recurse -Force
+          Copy-Item scripts .desktop-runtime/scripts -Recurse -Force
+          Copy-Item drizzle .desktop-runtime/drizzle -Recurse -Force
+          Copy-Item public .desktop-runtime/public -Recurse -Force
+          Copy-Item package.json .desktop-runtime/package.json -Force
+
+          node -e "const fs=require('fs');const f='.desktop-runtime/package.json';const p=JSON.parse(fs.readFileSync(f));p.dependencies={...(p.dependencies||{}),wrangler:'4.92.0'};p.devDependencies={};p.scripts={};delete p.packageManager;fs.writeFileSync(f,JSON.stringify(p,null,2));"
+
+          npm install --prefix .desktop-runtime --omit=dev --no-audit --no-fund
+
+      - name: Give build a unique version
+        shell: pwsh
+        run: |
+          node -e "const fs=require('fs');const f='package.json';const p=JSON.parse(fs.readFileSync(f));p.version='0.1.${{ github.run_number }}';fs.writeFileSync(f,JSON.stringify(p,null,2)+'\n');"
+
+      - name: Build Windows installer
+        run: npx --yes electron-builder@26.0.12 --win nsis --x64
+
+      - name: Upload Actions artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: Sintavra-Windows-v0.1.${{ github.run_number }}
+          path: release/*.exe
+          if-no-files-found: error
+
+      - name: Publish GitHub Release
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          $tag = "v0.1.${{ github.run_number }}"
+          $exe = Get-ChildItem release -Filter *.exe | Select-Object -First 1
+          if (-not $exe) { throw "No se genero ningun .exe" }
+
+          $notes = @"
+          Automatic Sintavra Windows build.
+
+          Windows x64 installer: $($exe.Name)
+
+          This is an early Sintavra build. Features that do not yet have a real engine in the source project remain unavailable until implemented.
+          "@
+
+          gh release create $tag "$($exe.FullName)" --title "Sintavra $tag" --notes $notes

@@ -1,0 +1,26 @@
+﻿appId: com.rodroogo.sintavra
+productName: Sintavra
+asar: true
+directories:
+  output: release
+files:
+  - desktop/main.cjs
+  - package.json
+extraMetadata:
+  main: desktop/main.cjs
+extraResources:
+  - from: .desktop-runtime
+    to: runtime
+artifactName: Sintavra-Setup-${version}-${arch}.${ext}
+win:
+  target:
+    - target: nsis
+      arch:
+        - x64
+nsis:
+  oneClick: false
+  perMachine: false
+  allowToChangeInstallationDirectory: true
+  createDesktopShortcut: true
+  createStartMenuShortcut: true
+  shortcutName: Sintavra

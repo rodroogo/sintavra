@@ -49,3 +49,7 @@ next-env.d.ts
 *.tsbuildinfo
 __pycache__/
 *.pyc
+
+# Sintavra desktop build output
+release/
+.desktop-runtime/
