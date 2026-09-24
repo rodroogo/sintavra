@@ -1,0 +1,179 @@
+{
+  "name": "Lua",
+  "mark": "Lu",
+  "color": "#9fa8f1",
+  "desc": "Un lenguaje pequeño con mucho alcance.",
+  "en": "A small language with a broad reach.",
+  "ext": "lua",
+  "runner": "lua",
+  "id": "lua",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "lua-inicio",
+      "concept": "inicio",
+      "title": "Primer programa",
+      "titleEn": "First program",
+      "minutes": 5,
+      "body": "print muestra valores. local limita el alcance del nombre. El operador .. concatena texto. No se necesitan puntos y coma al final de cada línea en estos ejemplos.",
+      "bodyEn": "Run the complete example and trace each instruction from top to bottom. Text literals use quotes; identifiers refer to names in the program.",
+      "code": "local nombre = \"Ada\"\nprint(\"Hola, \" .. nombre)",
+      "pitfall": "Usar + para concatenar texto no es equivalente a .. .",
+      "pitfallEn": "Text literals use quotes; identifiers refer to names in the program.",
+      "exercise": "Cambia el saludo para que muestre tu nombre.",
+      "exerciseEn": "Change the greeting to display your name.",
+      "hints": [
+        "Busca el texto que se muestra en pantalla.",
+        "Las comillas delimitan texto literal.",
+        "Conserva la llamada de salida y cambia su argumento."
+      ],
+      "hintsEn": [
+        "Change the greeting to display your name.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "lua-variables",
+      "concept": "variables",
+      "title": "Variables y tipos",
+      "titleEn": "Variables and types",
+      "minutes": 6,
+      "body": "Las variables no tienen un tipo fijo. local evita crear una variable global accidentalmente. nil representa ausencia de valor. La configuración numérica depende de la versión e implementación.",
+      "bodyEn": "A variable gives a name to a value. Assignment updates that binding. Distinguish numeric values from strings before performing arithmetic. Use local to avoid accidental globals. nil represents an absent value.",
+      "code": "local puntos = 12\npuntos = puntos + 3\nprint(puntos)",
+      "pitfall": "Sin local puedes modificar accidentalmente una variable global.",
+      "pitfallEn": "nil represents an absent value.",
+      "exercise": "Empieza con 20 puntos, resta 4 y muestra el resultado.",
+      "exerciseEn": "Start with 20 points, subtract 4 and print the result.",
+      "hints": [
+        "Necesitas una asignación inicial y una resta.",
+        "Haz la operación antes de mostrar el resultado.",
+        "El resultado esperado es 16."
+      ],
+      "hintsEn": [
+        "Start with 20 points, subtract 4 and print the result.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "lua-inicio"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "lua-condicionales",
+      "concept": "condicionales",
+      "title": "Tomar decisiones",
+      "titleEn": "Making decisions",
+      "minutes": 7,
+      "body": "if usa then y se cierra con end. Solo false y nil son falsos: 0 y la cadena vacía se consideran verdaderos. ~= significa distinto.",
+      "bodyEn": "A conditional selects a branch. Compare the value and then execute the matching block. Test both branches and the exact boundary. Only false and nil are false; zero is truthy.",
+      "code": "local edad = 17\nif edad >= 18 then\n    print(\"Mayor\")\nelse\n    print(\"Menor\")\nend",
+      "pitfall": "if 0 then entra en la rama: cero es verdadero en Lua.",
+      "pitfallEn": "Only false and nil are false; zero is truthy.",
+      "exercise": "Clasifica una temperatura: si es mayor a 25 muestra \"Calor\"; en otro caso, \"Templado\".",
+      "exerciseEn": "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+      "hints": [
+        "Necesitas una condición que compare números.",
+        "La comparación debe ser estrictamente mayor: >.",
+        "Comprueba también el caso exacto de 25."
+      ],
+      "hintsEn": [
+        "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "lua-variables"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "lua-bucles",
+      "concept": "bucles",
+      "title": "Repetir con for",
+      "titleEn": "Repeating with for",
+      "minutes": 8,
+      "body": "El for numérico incluye el límite final cuando el paso permite alcanzarlo. for i = 1, 5 recorre 1 a 5. Un tercer valor permite elegir el paso.",
+      "bodyEn": "A loop repeats a block. Trace its initial state, continuation condition and update. Always verify where it stops. The numeric for includes its final bound when reached; the optional third value is the step.",
+      "code": "for i = 1, 5 do\n    print(i)\nend",
+      "pitfall": "El límite de este for es inclusivo, a diferencia del stop de range en Python.",
+      "pitfallEn": "The numeric for includes its final bound when reached; the optional third value is the step.",
+      "exercise": "Imprime los números pares del 2 al 10, uno por línea.",
+      "exerciseEn": "Print the even numbers from 2 to 10, one per line.",
+      "hints": [
+        "Piensa en el primer número, el último y el salto.",
+        "Avanza de dos en dos.",
+        "El resultado debe tener cinco líneas: 2, 4, 6, 8, 10."
+      ],
+      "hintsEn": [
+        "Print the even numbers from 2 to 10, one per line.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "lua-condicionales"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "lua-funciones",
+      "concept": "funciones",
+      "title": "Funciones",
+      "titleEn": "Functions",
+      "minutes": 9,
+      "body": "local function define una función local. Los parámetros reciben valores. Lua permite devolver varios resultados, aunque este ejemplo devuelve solo uno.",
+      "bodyEn": "A function groups a reusable operation. Parameters receive inputs; return supplies a result to the caller. Printing and returning are different.",
+      "code": "local function doble(numero)\n    return numero * 2\nend\nprint(doble(7))",
+      "pitfall": "Olvidar end deja incompleta la definición.",
+      "pitfallEn": "Printing and returning are different.",
+      "exercise": "Escribe una función triple que devuelva tres veces su argumento. Pruébala con 4 y con 0.",
+      "exerciseEn": "Write a triple function. Test it with 4 and 0.",
+      "hints": [
+        "El dato de entrada será un parámetro.",
+        "Multiplica ese parámetro por 3.",
+        "Devuelve el resultado con return; no lo muestres dentro de la función."
+      ],
+      "hintsEn": [
+        "Write a triple function. Test it with 4 and 0.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "lua-bucles"
+      ],
+      "level": "Básico"
+    },
+    {
+      "id": "lua-colecciones",
+      "concept": "colecciones",
+      "title": "Colecciones",
+      "titleEn": "Collections",
+      "minutes": 10,
+      "body": "Las tablas sirven como secuencias y como mapas. En una secuencia convencional se empieza en 1. # da la longitud de una secuencia sin huecos; no es un contador general de claves.",
+      "bodyEn": "A collection stores several values. Access positions using the language’s indexing rules and check bounds before reading. Sequences conventionally start at 1. # is not a general count of table keys and requires care with holes.",
+      "code": "local notas = {12, 16, 18}\ntable.insert(notas, 20)\nprint(notas[1])\nprint(#notas)",
+      "pitfall": "Con huecos nil, # puede no representar el tamaño que esperas.",
+      "pitfallEn": "# is not a general count of table keys and requires care with holes.",
+      "exercise": "Crea una colección con 3 notas y muestra la primera. Explica por qué elegiste ese índice.",
+      "exerciseEn": "Create a collection of 3 grades and print the first. Explain your chosen index.",
+      "hints": [
+        "Revisa dónde comienza la indexación de este lenguaje.",
+        "La primera posición no coincide con la cantidad de elementos.",
+        "Lua suele empezar en 1; los otros lenguajes de esta ruta, en 0."
+      ],
+      "hintsEn": [
+        "Create a collection of 3 grades and print the first. Explain your chosen index.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "lua-funciones"
+      ],
+      "level": "Básico"
+    }
+  ]
+}

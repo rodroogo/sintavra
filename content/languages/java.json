@@ -1,0 +1,179 @@
+{
+  "name": "Java",
+  "mark": "Jv",
+  "color": "#eea17c",
+  "desc": "Construye con tipos y objetos.",
+  "en": "Build with types and objects.",
+  "ext": "java",
+  "runner": null,
+  "id": "java",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "java-inicio",
+      "concept": "inicio",
+      "title": "Primer programa",
+      "titleEn": "First program",
+      "minutes": 5,
+      "body": "Este programa usa la forma clásica de entrada main. El archivo se llama Main.java porque contiene la clase pública Main. System.out.println escribe y añade un salto de línea.",
+      "bodyEn": "Run the complete example and trace each instruction from top to bottom. Text literals use quotes; identifiers refer to names in the program.",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        System.out.println(\"Hola, Sintavra\");\n    }\n}",
+      "pitfall": "Main.java y la clase pública deben coincidir en este ejemplo.",
+      "pitfallEn": "Text literals use quotes; identifiers refer to names in the program.",
+      "exercise": "Cambia el saludo para que muestre tu nombre.",
+      "exerciseEn": "Change the greeting to display your name.",
+      "hints": [
+        "Busca el texto que se muestra en pantalla.",
+        "Las comillas delimitan texto literal.",
+        "Conserva la llamada de salida y cambia su argumento."
+      ],
+      "hintsEn": [
+        "Change the greeting to display your name.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "java-variables",
+      "concept": "variables",
+      "title": "Variables y tipos",
+      "titleEn": "Variables and types",
+      "minutes": 6,
+      "body": "Java comprueba los tipos antes de ejecutar. int es un tipo primitivo; String es una clase. Una variable local debe inicializarse antes de leerse.",
+      "bodyEn": "A variable gives a name to a value. Assignment updates that binding. Distinguish numeric values from strings before performing arithmetic. Types are checked before execution. Integer division such as 5 / 2 yields 2.",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        int puntos = 12;\n        puntos += 3;\n        System.out.println(puntos);\n    }\n}",
+      "pitfall": "Una operación entre enteros como 5 / 2 produce 2.",
+      "pitfallEn": "Integer division such as 5 / 2 yields 2.",
+      "exercise": "Empieza con 20 puntos, resta 4 y muestra el resultado.",
+      "exerciseEn": "Start with 20 points, subtract 4 and print the result.",
+      "hints": [
+        "Necesitas una asignación inicial y una resta.",
+        "Haz la operación antes de mostrar el resultado.",
+        "El resultado esperado es 16."
+      ],
+      "hintsEn": [
+        "Start with 20 points, subtract 4 and print the result.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "java-inicio"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "java-condicionales",
+      "concept": "condicionales",
+      "title": "Tomar decisiones",
+      "titleEn": "Making decisions",
+      "minutes": 7,
+      "body": "if exige una expresión boolean. Para enteros, == compara valores. Para comparar el contenido de cadenas usa equals; == comprueba identidad de referencias.",
+      "bodyEn": "A conditional selects a branch. Compare the value and then execute the matching block. Test both branches and the exact boundary. Compare string contents with equals, not ==.",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        int edad = 17;\n        if (edad >= 18) System.out.println(\"Mayor\");\n        else System.out.println(\"Menor\");\n    }\n}",
+      "pitfall": "Comparar texto con == puede parecer funcionar en algunos casos y fallar en otros; usa equals.",
+      "pitfallEn": "Compare string contents with equals, not ==.",
+      "exercise": "Clasifica una temperatura: si es mayor a 25 muestra \"Calor\"; en otro caso, \"Templado\".",
+      "exerciseEn": "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+      "hints": [
+        "Necesitas una condición que compare números.",
+        "La comparación debe ser estrictamente mayor: >.",
+        "Comprueba también el caso exacto de 25."
+      ],
+      "hintsEn": [
+        "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "java-variables"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "java-bucles",
+      "concept": "bucles",
+      "title": "Repetir con for",
+      "titleEn": "Repeating with for",
+      "minutes": 8,
+      "body": "for ejecuta la inicialización una vez. Después alterna condición, cuerpo y actualización. Para recorrer una colección existe también el for mejorado.",
+      "bodyEn": "A loop repeats a block. Trace its initial state, continuation condition and update. Always verify where it stops. The classic for has initialization, condition and update. The condition is checked before every iteration.",
+      "code": "public class Main {\n    public static void main(String[] args) {\n        for (int i = 1; i <= 5; i++) {\n            System.out.println(i);\n        }\n    }\n}",
+      "pitfall": "i <= lista.size() recorre un índice de más si se usa como índice.",
+      "pitfallEn": "The condition is checked before every iteration.",
+      "exercise": "Imprime los números pares del 2 al 10, uno por línea.",
+      "exerciseEn": "Print the even numbers from 2 to 10, one per line.",
+      "hints": [
+        "Piensa en el primer número, el último y el salto.",
+        "Avanza de dos en dos.",
+        "El resultado debe tener cinco líneas: 2, 4, 6, 8, 10."
+      ],
+      "hintsEn": [
+        "Print the even numbers from 2 to 10, one per line.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "java-condicionales"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "java-funciones",
+      "concept": "funciones",
+      "title": "Funciones",
+      "titleEn": "Functions",
+      "minutes": 9,
+      "body": "Un método static se puede llamar aquí desde main sin instanciar Main. Java siempre pasa argumentos por valor, incluidas las referencias a objetos.",
+      "bodyEn": "A function groups a reusable operation. Parameters receive inputs; return supplies a result to the caller. Printing and returning are different.",
+      "code": "public class Main {\n    static int doble(int numero) { return numero * 2; }\n    public static void main(String[] args) {\n        System.out.println(doble(7));\n    }\n}",
+      "pitfall": "Cambiar una copia de una referencia no cambia la variable del llamador.",
+      "pitfallEn": "Printing and returning are different.",
+      "exercise": "Escribe una función triple que devuelva tres veces su argumento. Pruébala con 4 y con 0.",
+      "exerciseEn": "Write a triple function. Test it with 4 and 0.",
+      "hints": [
+        "El dato de entrada será un parámetro.",
+        "Multiplica ese parámetro por 3.",
+        "Devuelve el resultado con return; no lo muestres dentro de la función."
+      ],
+      "hintsEn": [
+        "Write a triple function. Test it with 4 and 0.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "java-bucles"
+      ],
+      "level": "Básico"
+    },
+    {
+      "id": "java-colecciones",
+      "concept": "colecciones",
+      "title": "Colecciones",
+      "titleEn": "Collections",
+      "minutes": 10,
+      "body": "ArrayList cambia de tamaño. Los genéricos usan Integer, no int. get accede por índice y size() cuenta elementos. El autoboxing permite añadir un int a esta lista.",
+      "bodyEn": "A collection stores several values. Access positions using the language’s indexing rules and check bounds before reading. ArrayList<Integer> uses add, get and size(). Arrays instead use length.",
+      "code": "import java.util.ArrayList;\npublic class Main {\n    public static void main(String[] args) {\n        ArrayList<Integer> notas = new ArrayList<>();\n        notas.add(12); notas.add(16); notas.add(18);\n        System.out.println(notas.get(0));\n        System.out.println(notas.size());\n    }\n}",
+      "pitfall": "No confundas array.length con lista.size().",
+      "pitfallEn": "Arrays instead use length.",
+      "exercise": "Crea una colección con 3 notas y muestra la primera. Explica por qué elegiste ese índice.",
+      "exerciseEn": "Create a collection of 3 grades and print the first. Explain your chosen index.",
+      "hints": [
+        "Revisa dónde comienza la indexación de este lenguaje.",
+        "La primera posición no coincide con la cantidad de elementos.",
+        "Lua suele empezar en 1; los otros lenguajes de esta ruta, en 0."
+      ],
+      "hintsEn": [
+        "Create a collection of 3 grades and print the first. Explain your chosen index.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "java-funciones"
+      ],
+      "level": "Básico"
+    }
+  ]
+}

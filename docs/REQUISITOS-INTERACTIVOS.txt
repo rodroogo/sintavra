@@ -1,0 +1,604 @@
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+SISTEMA EDUCATIVO INTERACTIVO — REDISEÑO OBLIGATORIO
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Rediseña por completo la experiencia educativa de Sintavra.
+
+NO quiero que Sintavra enseñe programación como un manual tradicional, una presentación, una lista de definiciones ni una sucesión de tarjetas del estilo:
+
+"def: sirve para crear una función."
+"<<: es un operador."
+"for: sirve para repetir código."
+
+Ese enfoque está prohibido como experiencia principal.
+
+Sintavra debe enseñar haciendo que el usuario LEA, TOQUE, EXPLORE, MODIFIQUE, EJECUTE Y CONSTRUYA código.
+
+La sensación debe ser la de tener simultáneamente:
+- un profesor interactivo;
+- un editor de código;
+- una terminal;
+- un diccionario contextual de programación;
+- ejercicios interactivos;
+- pequeños proyectos reales.
+
+──────────────────────────────────────────────────────────────
+1. INICIO DE SESIÓN / MODO OFFLINE
+──────────────────────────────────────────────────────────────
+
+ANTES de mostrar cursos o lecciones, mostrar una pantalla inicial extremadamente cuidada.
+
+Opciones principales:
+
+[ Iniciar sesión ]
+[ Crear cuenta ]
+
+Y una opción secundaria:
+
+[ Continuar sin cuenta ]
+
+No obligar al usuario a registrarse.
+
+Si selecciona "Continuar sin cuenta":
+
+- toda la aplicación educativa debe seguir funcionando;
+- guardar progreso localmente;
+- guardar cursos, XP, ejercicios, proyectos, configuraciones y logros;
+- indicar discretamente que está utilizando Sintavra en modo local;
+- NO mostrar constantemente banners molestos pidiendo crear una cuenta.
+
+Debe existir:
+
+[ Sincronizar progreso ]
+
+Si posteriormente crea una cuenta o inicia sesión, ofrecer:
+
+"Encontramos progreso guardado en este dispositivo."
+
+[ Combinar progreso ]
+[ Mantener progreso de la cuenta ]
+[ Mantener progreso local ]
+
+Nunca destruir progreso automáticamente.
+
+La aplicación debe estar diseñada offline-first siempre que sea técnicamente posible.
+
+──────────────────────────────────────────────────────────────
+2. NO ENSEÑAR CON DEFINICIONES AISLADAS
+──────────────────────────────────────────────────────────────
+
+La unidad fundamental de aprendizaje NO debe ser una página de teoría.
+
+Debe ser CÓDIGO INTERACTIVO.
+
+Ejemplo:
+
+def saludar(nombre):
+    return "Hola " + nombre
+
+saludar("Rodrigo")
+
+El código aparece directamente en pantalla.
+
+Las partes importantes deben ser seleccionables/clicables:
+
+[def] [saludar] [(nombre)] [return] ["Hola "] [+] [nombre]
+
+Si el usuario pulsa "def", abrir una pequeña explicación contextual al lado del código.
+
+Ejemplo:
+
+def
+────────────────
+Crea una función.
+
+Aquí:
+def saludar(nombre):
+
+le estamos diciendo a Python:
+"quiero crear una función llamada saludar".
+
+Pero la explicación NO termina ahí.
+
+Mostrar también:
+
+¿QUÉ HACE AQUÍ?
+
+def + saludar + (nombre)
+
+Juntos forman el inicio de la función.
+
+Separado:
+def → indica que crearemos una función
+saludar → nombre que elegimos
+nombre → dato que recibirá la función
+
+Juntos:
+def saludar(nombre):
+
+→ crea una función llamada "saludar" que recibe un dato llamado "nombre".
+
+Este comportamiento debe aplicarse a TODO elemento importante del lenguaje.
+
+El usuario puede tocar:
+
+variables
+operadores
+funciones
+métodos
+keywords
+tipos
+paréntesis
+corchetes
+llaves
+símbolos
+imports
+clases
+argumentos
+estructuras
+etc.
+
+Sintavra funciona parcialmente como un "diccionario vivo del código".
+
+──────────────────────────────────────────────────────────────
+3. EXPLICAR LAS PIEZAS Y DESPUÉS LA UNIÓN
+──────────────────────────────────────────────────────────────
+
+Una regla pedagógica fundamental:
+
+NO explicar únicamente qué significa cada elemento por separado.
+
+Explicar siempre:
+
+1. qué significa;
+2. qué hace individualmente;
+3. qué hace en ESA línea;
+4. con qué elementos está interactuando;
+5. qué producen todos juntos.
+
+Ejemplo:
+
+if edad >= 18:
+
+El usuario puede tocar:
+
+if
+edad
+>=
+18
+:
+
+Pero también debe poder seleccionar la línea completa.
+
+Sintavra entonces explica:
+
+"Esta línea comprueba si el valor almacenado en `edad` es mayor o igual a 18. Si la condición es verdadera, Python ejecutará el bloque que aparece debajo."
+
+El objetivo es evitar que el alumno memorice símbolos sin entender cómo forman un programa.
+
+──────────────────────────────────────────────────────────────
+4. FLUJO DE CADA LECCIÓN
+──────────────────────────────────────────────────────────────
+
+Las lecciones deben seguir aproximadamente este flujo:
+
+FASE A — DESCUBRIR
+
+Mostrar un pequeño fragmento de código funcionando.
+
+No comenzar con una pared de teoría.
+
+Permitir tocar sus componentes y descubrir qué hacen.
+
+FASE B — ENTENDER
+
+Explicar el código completo paso por paso.
+
+Permitir ejecutar el código y ver qué ocurre.
+
+Cuando sea posible, visualizar internamente:
+
+variables
+valores
+iteraciones
+condiciones
+funciones
+retornos
+errores
+
+FASE C — COMPROBAR
+
+Después de explicar algo, hacer una pregunta corta.
+
+Ejemplos:
+
+"¿Qué valor tendrá `x` después de ejecutar esto?"
+
+"Marca la parte que crea la función."
+
+"¿Qué línea se ejecutará?"
+
+"Selecciona el operador correcto."
+
+No convertir esto en un examen enorme.
+
+Son pequeñas comprobaciones de comprensión.
+
+FASE D — MODIFICAR
+
+Dar código parcialmente funcional.
+
+Ejemplo:
+
+def duplicar(numero):
+    return ______
+
+El alumno debe modificarlo.
+
+FASE E — TERMINAL / EJECUCIÓN REAL
+
+Después de comprender el concepto, pasar a una terminal/editor integrado.
+
+Ahora el usuario debe escribir código sin simplemente seleccionar respuestas.
+
+Sintavra ejecuta el código y muestra:
+
+stdout
+stderr
+errores
+resultado
+
+Si falla, NO revelar inmediatamente la solución.
+
+Dar primero una pista relacionada con el error.
+
+Ejemplo:
+
+"Tu función existe, pero observa qué estás devolviendo."
+
+Después:
+
+[ Otra pista ]
+
+Y solamente después:
+
+[ Mostrar solución ]
+
+FASE F — APLICACIÓN
+
+Dar un pequeño problema donde el alumno tenga que combinar lo aprendido.
+
+──────────────────────────────────────────────────────────────
+5. MINI PROYECTOS
+──────────────────────────────────────────────────────────────
+
+Los cursos NO deben consistir únicamente en ejercicios diminutos.
+
+Debe haber proyectos.
+
+La dificultad del proyecto debe corresponder al nivel REAL del estudiante.
+
+NIVEL FÁCIL:
+proyectos pequeños y muy guiados.
+
+Ejemplos:
+- calculadora básica;
+- conversor de temperatura;
+- generador de nombres;
+- contador;
+- pequeño quiz;
+- programa que organiza una lista.
+
+NIVEL INTERMEDIO:
+menos instrucciones y combinación de varios conceptos.
+
+Ejemplos:
+- gestor de tareas en terminal;
+- sistema de inventario;
+- juego textual;
+- analizador simple de archivos;
+- agenda;
+- pequeña API cuando el lenguaje/curso lo permita.
+
+NIVEL DIFÍCIL:
+proyectos con arquitectura y decisiones propias.
+
+No dar instrucciones línea por línea.
+
+El alumno debe diseñar partes de la solución.
+
+IMPORTANTE:
+
+En módulos cortos:
+→ un proyecto al final.
+
+En módulos medianos/largos:
+→ un mini proyecto aproximadamente a mitad del módulo;
+→ un proyecto final que combine los conceptos aprendidos.
+
+NO insertar proyectos artificialmente solo para cumplir una cuota.
+
+──────────────────────────────────────────────────────────────
+6. DIFICULTAD ADAPTATIVA
+──────────────────────────────────────────────────────────────
+
+El usuario puede elegir inicialmente:
+
+Principiante
+Intermedio
+Avanzado
+
+Pero Sintavra debe adaptar gradualmente la dificultad según su desempeño.
+
+Si resuelve todo inmediatamente:
+- reducir explicaciones obvias;
+- aumentar independencia;
+- presentar problemas más abiertos.
+
+Si comete varios errores:
+- dividir el problema;
+- mostrar ejemplos;
+- ofrecer pistas;
+- volver a conceptos relacionados.
+
+Nunca infantilizar al usuario.
+
+Nunca utilizar mensajes condescendientes.
+
+──────────────────────────────────────────────────────────────
+7. DICCIONARIO CONTEXTUAL
+──────────────────────────────────────────────────────────────
+
+Crear un sistema global de "Code Dictionary".
+
+El usuario debe poder hacer clic derecho, tocar o seleccionar prácticamente cualquier elemento reconocido del código.
+
+Ejemplo:
+
+Python:
+def
+lambda
+yield
+return
+*
+**
+//
+%
+[]
+{}
+()
+
+C:
+printf
+scanf
+&
+*
+->
+sizeof
+
+C++:
+cout
+cin
+::
+<<
+>>
+auto
+template
+
+JavaScript:
+const
+let
+===
+=>
+async
+await
+
+etc.
+
+Al seleccionar algo, mostrar:
+
+NOMBRE
+SIGNIFICADO
+QUÉ HACE AQUÍ
+EJEMPLO MÍNIMO
+ELEMENTOS RELACIONADOS
+
+No abrir una página gigante.
+
+Usar popovers/paneles contextuales rápidos.
+
+Debe sentirse como inspeccionar código.
+
+──────────────────────────────────────────────────────────────
+8. EXPLICACIÓN VISUAL DEL CÓDIGO
+──────────────────────────────────────────────────────────────
+
+Permitir un modo opcional:
+
+[ Explicar código ]
+
+El usuario selecciona varias líneas.
+
+Sintavra divide visualmente la ejecución:
+
+entrada
+↓
+operación
+↓
+variables modificadas
+↓
+condición
+↓
+salida
+
+Para loops, permitir avanzar iteración por iteración.
+
+Ejemplo:
+
+for i in range(3):
+
+Iteración 1 → i = 0
+Iteración 2 → i = 1
+Iteración 3 → i = 2
+
+Esto debe estar integrado con el editor y no sentirse como una presentación aparte.
+
+──────────────────────────────────────────────────────────────
+9. UI — HACER QUE SINTAVRA SE SIENTA HECHA POR PERSONAS
+──────────────────────────────────────────────────────────────
+
+Rediseñar y pulir la interfaz completa.
+
+Evitar absolutamente la apariencia genérica de una aplicación generada por IA.
+
+NO abusar de:
+
+- gradientes morados;
+- tarjetas gigantes;
+- bordes redondeados exagerados;
+- emojis innecesarios;
+- textos motivacionales genéricos;
+- sombras excesivas;
+- cientos de elementos flotantes;
+- interfaces llenas de "✨";
+- descripciones redundantes;
+- dashboards llenos de estadísticas inútiles.
+
+La interfaz debe sentirse deliberadamente diseñada.
+
+Inspiración conceptual:
+un IDE moderno + plataforma educativa + terminal.
+
+Debe tener:
+
+jerarquía visual clara;
+espaciado consistente;
+tipografía cuidada;
+microinteracciones;
+animaciones discretas;
+estados hover/focus/pressed;
+atajos de teclado;
+tooltips útiles;
+buen diseño responsive;
+dark/light mode;
+accesibilidad;
+feedback inmediato al ejecutar código.
+
+Cada pantalla debe justificar su existencia.
+
+Si un elemento no ayuda a aprender, programar, navegar o entender progreso, considerar eliminarlo.
+
+──────────────────────────────────────────────────────────────
+10. EXPERIENCIA DE UNA LECCIÓN IDEAL
+──────────────────────────────────────────────────────────────
+
+Ejemplo:
+
+Curso:
+Python
+
+Módulo:
+Funciones
+
+Lección:
+Tu primera función
+
+Sintavra muestra:
+
+def saludar(nombre):
+    return "Hola " + nombre
+
+El usuario toca `def`.
+
+Sintavra explica qué significa.
+
+Toca `nombre`.
+
+Sintavra explica parámetros.
+
+Toca `return`.
+
+Sintavra explica retorno.
+
+Selecciona toda la función.
+
+Sintavra explica cómo trabajan juntas las piezas.
+
+Después pregunta:
+
+"Marca dónde se define el parámetro."
+
+El usuario toca `(nombre)`.
+
+Después:
+
+"¿Qué devolverá saludar('Ana')?"
+
+El usuario responde.
+
+Después se abre el editor:
+
+def saludar(nombre):
+    # completa esto
+
+El usuario programa.
+
+Ejecuta.
+
+Sintavra verifica.
+
+Después aparece un reto:
+
+"Crea una función `presentar` que reciba nombre y edad y produzca una presentación."
+
+Al terminar:
+
+Lección completada.
+
+El usuario continúa.
+
+Después de varias lecciones:
+
+MINI PROYECTO:
+crear un pequeño generador de perfiles utilizando funciones.
+
+Ese debe ser el ritmo general de Sintavra.
+
+──────────────────────────────────────────────────────────────
+11. REGLA PRINCIPAL DE DISEÑO EDUCATIVO
+──────────────────────────────────────────────────────────────
+
+El usuario debe pasar MÁS TIEMPO interactuando con código que leyendo explicaciones.
+
+Sintavra debe enseñar:
+
+VER
+→ TOCAR
+→ ENTENDER
+→ RESPONDER
+→ MODIFICAR
+→ ESCRIBIR
+→ EJECUTAR
+→ CONSTRUIR
+
+y no:
+
+LEER
+→ LEER
+→ LEER
+→ SIGUIENTE
+→ LEER.
+
+Implementa este rediseño en TODOS los lenguajes soportados actualmente por Sintavra:
+
+C
+C#
+C++
+Python
+Lua
+JavaScript
+Java
+
+Adapta los ejemplos, terminales, compiladores/intérpretes, diccionario contextual, ejercicios y proyectos a las características reales de cada lenguaje.
+
+No hagas únicamente un mockup visual. Implementa el flujo, estados, persistencia, navegación y comportamiento real necesarios para que esta sea la experiencia educativa central del producto.

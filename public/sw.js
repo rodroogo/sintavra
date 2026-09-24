@@ -1,0 +1,6 @@
+const CACHE='sintavra-v2';
+self.addEventListener('install',event=>event.waitUntil(caches.open(CACHE).then(c=>c.addAll(['/offline','/sintavra-manual.html','/favicon.svg','/runtime/lua.js',...['pyodide.js','pyodide.asm.js','pyodide.asm.wasm','pyodide-lock.json','python_stdlib.zip'].map(n=>'/runtime/python/'+n)])).then(()=>self.skipWaiting())));
+self.addEventListener('activate',event=>event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(k=>k!==CACHE).map(k=>caches.delete(k)))).then(()=>self.clients.claim())));
+self.addEventListener('fetch',event=>{const url=new URL(event.request.url);if(event.request.method!=='GET'||url.origin!==self.location.origin||url.pathname.startsWith('/api/v1/')||url.pathname.includes('signin')||url.pathname.includes('signout'))return;
+if(event.request.mode==='navigate'){event.respondWith(fetch(event.request).catch(()=>caches.match('/offline')));return;}
+if(/\.(js|css|woff2?|svg)$/.test(url.pathname)||url.pathname==='/api/runner'||url.pathname.startsWith('/runtime/')){event.respondWith(caches.open(CACHE).then(async cache=>{try{const response=await fetch(event.request);if(response.ok)await cache.put(event.request,response.clone());return response;}catch(error){const cached=await cache.match(event.request);if(cached)return cached;throw error;}}));}});

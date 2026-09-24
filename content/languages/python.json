@@ -1,0 +1,179 @@
+{
+  "name": "Python",
+  "mark": "Py",
+  "color": "#f3c969",
+  "desc": "Ideas claras, programas útiles.",
+  "en": "Clear ideas, useful programs.",
+  "ext": "py",
+  "runner": "python",
+  "id": "python",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "python-inicio",
+      "concept": "inicio",
+      "title": "Primer programa",
+      "titleEn": "First program",
+      "minutes": 5,
+      "body": "Python ejecuta las instrucciones de arriba hacia abajo. print muestra valores. El texto se escribe entre comillas; nombre es una variable, no texto literal.",
+      "bodyEn": "Run the complete example and trace each instruction from top to bottom. Text literals use quotes; identifiers refer to names in the program.",
+      "code": "nombre = \"Ada\"\nprint(\"Hola,\", nombre)",
+      "pitfall": "Escribir print(nombre) sin haber definido nombre produce NameError.",
+      "pitfallEn": "Text literals use quotes; identifiers refer to names in the program.",
+      "exercise": "Cambia el saludo para que muestre tu nombre.",
+      "exerciseEn": "Change the greeting to display your name.",
+      "hints": [
+        "Busca el texto que se muestra en pantalla.",
+        "Las comillas delimitan texto literal.",
+        "Conserva la llamada de salida y cambia su argumento."
+      ],
+      "hintsEn": [
+        "Change the greeting to display your name.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "python-variables",
+      "concept": "variables",
+      "title": "Variables y tipos",
+      "titleEn": "Variables and types",
+      "minutes": 6,
+      "body": "Una asignación vincula un nombre con un objeto. No declaras int antes de puntos. El tipo pertenece al objeto; convertir texto a número requiere una operación explícita como int(\"12\").",
+      "bodyEn": "A variable gives a name to a value. Assignment updates that binding. Distinguish numeric values from strings before performing arithmetic. Types belong to objects; int(\"12\") converts text explicitly.",
+      "code": "puntos = 12\npuntos = puntos + 3\nprint(puntos)",
+      "pitfall": "\"12\" + \"3\" concatena texto y produce \"123\"; no suma 15.",
+      "pitfallEn": "Types belong to objects; int(\"12\") converts text explicitly.",
+      "exercise": "Empieza con 20 puntos, resta 4 y muestra el resultado.",
+      "exerciseEn": "Start with 20 points, subtract 4 and print the result.",
+      "hints": [
+        "Necesitas una asignación inicial y una resta.",
+        "Haz la operación antes de mostrar el resultado.",
+        "El resultado esperado es 16."
+      ],
+      "hintsEn": [
+        "Start with 20 points, subtract 4 and print the result.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "python-inicio"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "python-condicionales",
+      "concept": "condicionales",
+      "title": "Tomar decisiones",
+      "titleEn": "Making decisions",
+      "minutes": 7,
+      "body": "La indentación define los bloques. Los dos puntos abren el bloque de if y else. == compara valores; = asigna. La condición se evalúa una vez en cada paso por el if.",
+      "bodyEn": "A conditional selects a branch. Compare the value and then execute the matching block. Test both branches and the exact boundary. Indentation defines blocks. Use == for equality.",
+      "code": "edad = 17\nif edad >= 18:\n    print(\"Mayor\")\nelse:\n    print(\"Menor\")",
+      "pitfall": "Mezclar tabulaciones y espacios puede romper la indentación. Usa cuatro espacios.",
+      "pitfallEn": "Use == for equality.",
+      "exercise": "Clasifica una temperatura: si es mayor a 25 muestra \"Calor\"; en otro caso, \"Templado\".",
+      "exerciseEn": "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+      "hints": [
+        "Necesitas una condición que compare números.",
+        "La comparación debe ser estrictamente mayor: >.",
+        "Comprueba también el caso exacto de 25."
+      ],
+      "hintsEn": [
+        "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "python-variables"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "python-bucles",
+      "concept": "bucles",
+      "title": "Repetir con for",
+      "titleEn": "Repeating with for",
+      "minutes": 8,
+      "body": "range(1, 6) produce 1, 2, 3, 4 y 5: el límite final se excluye. for recorre elementos de un iterable. No necesita un contador que incrementes a mano.",
+      "bodyEn": "A loop repeats a block. Trace its initial state, continuation condition and update. Always verify where it stops. range(1, 6) excludes 6. Python for iterates over iterable elements.",
+      "code": "for numero in range(1, 6):\n    print(numero)",
+      "pitfall": "range(5) empieza en cero. Para incluir 5 como último número, el límite debe ser 6.",
+      "pitfallEn": "Python for iterates over iterable elements.",
+      "exercise": "Imprime los números pares del 2 al 10, uno por línea.",
+      "exerciseEn": "Print the even numbers from 2 to 10, one per line.",
+      "hints": [
+        "Piensa en el primer número, el último y el salto.",
+        "Avanza de dos en dos.",
+        "El resultado debe tener cinco líneas: 2, 4, 6, 8, 10."
+      ],
+      "hintsEn": [
+        "Print the even numbers from 2 to 10, one per line.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "python-condicionales"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "python-funciones",
+      "concept": "funciones",
+      "title": "Funciones",
+      "titleEn": "Functions",
+      "minutes": 9,
+      "body": "def define una función. numero es un parámetro local. return entrega un resultado y termina esa llamada. Mostrar algo con print no equivale a devolverlo.",
+      "bodyEn": "A function groups a reusable operation. Parameters receive inputs; return supplies a result to the caller. Printing and returning are different.",
+      "code": "def doble(numero):\n    return numero * 2\n\nprint(doble(7))",
+      "pitfall": "Sin return explícito, una función devuelve None.",
+      "pitfallEn": "Printing and returning are different.",
+      "exercise": "Escribe una función triple que devuelva tres veces su argumento. Pruébala con 4 y con 0.",
+      "exerciseEn": "Write a triple function. Test it with 4 and 0.",
+      "hints": [
+        "El dato de entrada será un parámetro.",
+        "Multiplica ese parámetro por 3.",
+        "Devuelve el resultado con return; no lo muestres dentro de la función."
+      ],
+      "hintsEn": [
+        "Write a triple function. Test it with 4 and 0.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "python-bucles"
+      ],
+      "level": "Básico"
+    },
+    {
+      "id": "python-colecciones",
+      "concept": "colecciones",
+      "title": "Colecciones",
+      "titleEn": "Collections",
+      "minutes": 10,
+      "body": "Una lista es mutable y sus índices empiezan en cero. append añade un elemento al final. len devuelve la cantidad. Un índice fuera del rango produce IndexError.",
+      "bodyEn": "A collection stores several values. Access positions using the language’s indexing rules and check bounds before reading. Lists are mutable. append adds one element and len counts them.",
+      "code": "notas = [12, 16, 18]\nnotas.append(20)\nprint(notas[0])\nprint(len(notas))",
+      "pitfall": "El último índice es len(notas) - 1, no len(notas).",
+      "pitfallEn": "append adds one element and len counts them.",
+      "exercise": "Crea una colección con 3 notas y muestra la primera. Explica por qué elegiste ese índice.",
+      "exerciseEn": "Create a collection of 3 grades and print the first. Explain your chosen index.",
+      "hints": [
+        "Revisa dónde comienza la indexación de este lenguaje.",
+        "La primera posición no coincide con la cantidad de elementos.",
+        "Lua suele empezar en 1; los otros lenguajes de esta ruta, en 0."
+      ],
+      "hintsEn": [
+        "Create a collection of 3 grades and print the first. Explain your chosen index.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "python-funciones"
+      ],
+      "level": "Básico"
+    }
+  ]
+}

@@ -1,0 +1,179 @@
+{
+  "name": "C",
+  "mark": "C",
+  "color": "#a8bad0",
+  "desc": "Entiende lo que ocurre debajo.",
+  "en": "Understand what happens underneath.",
+  "ext": "c",
+  "runner": null,
+  "id": "c",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "c-inicio",
+      "concept": "inicio",
+      "title": "Primer programa",
+      "titleEn": "First program",
+      "minutes": 5,
+      "body": "main es el punto de entrada. stdio.h declara printf. \\n representa un salto de línea. return 0 comunica finalización exitosa al entorno.",
+      "bodyEn": "Run the complete example and trace each instruction from top to bottom. Text literals use quotes; identifiers refer to names in the program.",
+      "code": "#include <stdio.h>\nint main(void) {\n    printf(\"Hola, Sintavra\\n\");\n    return 0;\n}",
+      "pitfall": "El punto y coma termina las instrucciones; las directivas #include no lo llevan.",
+      "pitfallEn": "Text literals use quotes; identifiers refer to names in the program.",
+      "exercise": "Cambia el saludo para que muestre tu nombre.",
+      "exerciseEn": "Change the greeting to display your name.",
+      "hints": [
+        "Busca el texto que se muestra en pantalla.",
+        "Las comillas delimitan texto literal.",
+        "Conserva la llamada de salida y cambia su argumento."
+      ],
+      "hintsEn": [
+        "Change the greeting to display your name.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "c-variables",
+      "concept": "variables",
+      "title": "Variables y tipos",
+      "titleEn": "Variables and types",
+      "minutes": 6,
+      "body": "int representa enteros. printf usa especificadores: %d corresponde a int. Los tipos y formatos deben coincidir. Inicializar evita leer un valor indeterminado.",
+      "bodyEn": "A variable gives a name to a value. Assignment updates that binding. Distinguish numeric values from strings before performing arithmetic. Types are checked before execution. Integer division such as 5 / 2 yields 2.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int puntos = 12;\n    puntos += 3;\n    printf(\"%d\\n\", puntos);\n}",
+      "pitfall": "No uses %s para imprimir un int. Un formato incorrecto puede provocar comportamiento indefinido.",
+      "pitfallEn": "Integer division such as 5 / 2 yields 2.",
+      "exercise": "Empieza con 20 puntos, resta 4 y muestra el resultado.",
+      "exerciseEn": "Start with 20 points, subtract 4 and print the result.",
+      "hints": [
+        "Necesitas una asignación inicial y una resta.",
+        "Haz la operación antes de mostrar el resultado.",
+        "El resultado esperado es 16."
+      ],
+      "hintsEn": [
+        "Start with 20 points, subtract 4 and print the result.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "c-inicio"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "c-condicionales",
+      "concept": "condicionales",
+      "title": "Tomar decisiones",
+      "titleEn": "Making decisions",
+      "minutes": 7,
+      "body": "En una condición, cero se considera falso y un valor distinto de cero, verdadero. Las llaves agrupan el cuerpo. Usa == para comparar; = asigna.",
+      "bodyEn": "A conditional selects a branch. Compare the value and then execute the matching block. Test both branches and the exact boundary. Use == for equality, not assignment.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int edad = 17;\n    if (edad >= 18) { puts(\"Mayor\"); }\n    else { puts(\"Menor\"); }\n}",
+      "pitfall": "Escribir if (edad = 18) asigna 18 y la condición se considera verdadera.",
+      "pitfallEn": "Use == for equality, not assignment.",
+      "exercise": "Clasifica una temperatura: si es mayor a 25 muestra \"Calor\"; en otro caso, \"Templado\".",
+      "exerciseEn": "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+      "hints": [
+        "Necesitas una condición que compare números.",
+        "La comparación debe ser estrictamente mayor: >.",
+        "Comprueba también el caso exacto de 25."
+      ],
+      "hintsEn": [
+        "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "c-variables"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "c-bucles",
+      "concept": "bucles",
+      "title": "Repetir con for",
+      "titleEn": "Repeating with for",
+      "minutes": 8,
+      "body": "La declaración del contador dentro de for requiere C99 o posterior. Se evalúa primero la condición y luego el cuerpo. Una condición inicialmente falsa ejecuta cero vueltas.",
+      "bodyEn": "A loop repeats a block. Trace its initial state, continuation condition and update. Always verify where it stops. The classic for has initialization, condition and update. The condition is checked before every iteration.",
+      "code": "#include <stdio.h>\nint main(void) {\n    for (int i = 1; i <= 5; i++) {\n        printf(\"%d\\n\", i);\n    }\n}",
+      "pitfall": "Elige límites que estén dentro del rango representable del contador.",
+      "pitfallEn": "The condition is checked before every iteration.",
+      "exercise": "Imprime los números pares del 2 al 10, uno por línea.",
+      "exerciseEn": "Print the even numbers from 2 to 10, one per line.",
+      "hints": [
+        "Piensa en el primer número, el último y el salto.",
+        "Avanza de dos en dos.",
+        "El resultado debe tener cinco líneas: 2, 4, 6, 8, 10."
+      ],
+      "hintsEn": [
+        "Print the even numbers from 2 to 10, one per line.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "c-condicionales"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "c-funciones",
+      "concept": "funciones",
+      "title": "Funciones",
+      "titleEn": "Functions",
+      "minutes": 9,
+      "body": "Los argumentos se pasan por valor. Cambiar numero dentro de doble no modifica la variable original del llamador. Las funciones deben declararse antes de usarse.",
+      "bodyEn": "A function groups a reusable operation. Parameters receive inputs; return supplies a result to the caller. Printing and returning are different.",
+      "code": "#include <stdio.h>\nint doble(int numero) { return numero * 2; }\nint main(void) {\n    printf(\"%d\\n\", doble(7));\n}",
+      "pitfall": "Una función que devuelve int debe devolver un valor válido en sus caminos normales.",
+      "pitfallEn": "Printing and returning are different.",
+      "exercise": "Escribe una función triple que devuelva tres veces su argumento. Pruébala con 4 y con 0.",
+      "exerciseEn": "Write a triple function. Test it with 4 and 0.",
+      "hints": [
+        "El dato de entrada será un parámetro.",
+        "Multiplica ese parámetro por 3.",
+        "Devuelve el resultado con return; no lo muestres dentro de la función."
+      ],
+      "hintsEn": [
+        "Write a triple function. Test it with 4 and 0.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "c-bucles"
+      ],
+      "level": "Básico"
+    },
+    {
+      "id": "c-colecciones",
+      "concept": "colecciones",
+      "title": "Colecciones",
+      "titleEn": "Collections",
+      "minutes": 10,
+      "body": "Un array agrupa elementos contiguos del mismo tipo. Su tamaño no crece con append. sizeof calcula bytes; la división mostrada calcula elementos solo cuando notas es realmente un array en ese ámbito.",
+      "bodyEn": "A collection stores several values. Access positions using the language’s indexing rules and check bounds before reading. C arrays have fixed size and no automatic bounds checking. sizeof works here on an array, not a pointer parameter.",
+      "code": "#include <stdio.h>\nint main(void) {\n    int notas[] = {12, 16, 18};\n    size_t cantidad = sizeof notas / sizeof notas[0];\n    printf(\"%d\\n%zu\\n\", notas[0], cantidad);\n}",
+      "pitfall": "Los arrays no verifican límites. sizeof sobre un parámetro puntero no revela el tamaño del array.",
+      "pitfallEn": "sizeof works here on an array, not a pointer parameter.",
+      "exercise": "Crea una colección con 3 notas y muestra la primera. Explica por qué elegiste ese índice.",
+      "exerciseEn": "Create a collection of 3 grades and print the first. Explain your chosen index.",
+      "hints": [
+        "Revisa dónde comienza la indexación de este lenguaje.",
+        "La primera posición no coincide con la cantidad de elementos.",
+        "Lua suele empezar en 1; los otros lenguajes de esta ruta, en 0."
+      ],
+      "hintsEn": [
+        "Create a collection of 3 grades and print the first. Explain your chosen index.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "c-funciones"
+      ],
+      "level": "Básico"
+    }
+  ]
+}

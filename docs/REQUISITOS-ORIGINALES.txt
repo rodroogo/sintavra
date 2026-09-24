@@ -1,0 +1,1530 @@
+SINTAVRA — ESPECIFICACIÓN MAESTRA
+
+Quiero que diseñes y desarrolles Sintavra, una plataforma completa para aprender programación mediante teoría, práctica, proyectos, experimentación y un tutor de inteligencia artificial.
+
+Sintavra NO debe ser una demo, landing page, chatbot disfrazado de plataforma educativa ni un conjunto de pantallas falsas.
+
+Debe ser un producto funcional, mantenible, escalable, seguro, visualmente excelente y preparado desde el principio para funcionar como:
+
+- Aplicación web
+- Aplicación de escritorio
+- Futuro CLI
+- Plataforma educativa extensible
+
+Nombre:
+
+Sintavra
+
+Lema:
+
+Aprende. Programa. Comprende.
+
+Principio fundamental:
+
+«La IA debe enseñar al usuario a programar, no programar por él.»
+
+---
+
+1. IDENTIDAD DEL PRODUCTO
+
+Sintavra debe sentirse como un producto diseñado cuidadosamente por personas.
+
+NO quiero la apariencia típica de una aplicación generada automáticamente por IA.
+
+Evitar específicamente:
+
+- Landing pages genéricas
+- Gradientes puestos sin propósito
+- Exceso de tarjetas redondeadas
+- Glassmorphism innecesario
+- Textos exageradamente promocionales
+- Emojis por todas partes
+- Secciones repetitivas
+- Espaciados absurdamente grandes
+- Animaciones simplemente decorativas
+- Botones gigantes
+- Dashboards genéricos
+- Componentes que parezcan sacados directamente de una plantilla
+- Textos artificiales
+- Nombres genéricos como "AI Learning Experience"
+- Datos falsos utilizados para aparentar funcionalidad
+
+Quiero que cada pantalla parezca diseñada deliberadamente para Sintavra.
+
+Debe existir consistencia en:
+
+- Espaciado
+- Tipografía
+- Iconografía
+- Navegación
+- Estados
+- Colores
+- Animaciones
+- Terminología
+- Mensajes de error
+- Componentes
+- Interacciones
+
+La interfaz debe sentirse natural y profesional.
+
+---
+
+2. ESCALA DEL PROYECTO
+
+El objetivo a largo plazo es que Sintavra pueda convertirse en un proyecto extremadamente completo, potencialmente superior a 300 000 líneas útiles entre código, tests, contenido educativo estructurado, documentación y herramientas internas.
+
+IMPORTANTE:
+
+NO alcanzar esta cifra artificialmente.
+
+Está terminantemente prohibido aumentar el número de líneas mediante:
+
+- Código duplicado
+- Comentarios inútiles
+- Archivos generados artificialmente
+- Datos falsos
+- Funciones repetidas
+- Componentes duplicados
+- Espacios o saltos de línea innecesarios
+- Código muerto
+- Dependencias copiadas al repositorio
+- Archivos minificados
+- Builds
+- node_modules
+- Código generado automáticamente contabilizado como trabajo propio
+- Miles de ejercicios repetidos con cambios mínimos
+
+La calidad arquitectónica tiene prioridad absoluta sobre el número de líneas.
+
+Si Sintavra necesita 300 000+ líneas para alcanzar su visión completa, deben existir porque el producto realmente contiene esa funcionalidad.
+
+No sacrificar mantenibilidad para cumplir una métrica.
+
+---
+
+3. LENGUAJES
+
+Sintavra debe enseñar inicialmente:
+
+- C
+- C#
+- C++
+- Python
+- Lua
+- JavaScript
+- Java
+
+Cada lenguaje debe ser un módulo independiente.
+
+Cada módulo puede contener:
+
+- Manifest
+- Información
+- Manual
+- Ruta educativa
+- Conceptos
+- Dependencias entre conceptos
+- Lecciones
+- Ejemplos
+- Ejercicios
+- Desafíos
+- Tests
+- Exámenes
+- Proyectos
+- Configuración del runner
+
+Debe ser posible añadir nuevos lenguajes posteriormente sin modificar gran parte del núcleo.
+
+---
+
+4. RUTAS EDUCATIVAS
+
+Organizar cada lenguaje aproximadamente en:
+
+Fundamentos
+Básico
+Intermedio
+Avanzado
+Proyectos
+
+La estructura exacta debe respetar las características reales del lenguaje.
+
+Por ejemplo, C++ puede incluir:
+
+- Introducción
+- Sintaxis
+- Variables
+- Tipos
+- Operadores
+- Entrada/salida
+- Condicionales
+- for
+- while
+- switch
+- Funciones
+- Arrays
+- Strings
+- Referencias
+- Punteros
+- Memoria
+- Structs
+- Clases
+- OOP
+- STL
+- Archivos
+- Excepciones
+- Templates
+- Conceptos avanzados
+- Proyectos
+
+No copiar exactamente esta estructura a lenguajes donde no tenga sentido.
+
+---
+
+5. MANUALES
+
+Cada lenguaje debe poseer documentación educativa propia.
+
+Ejemplo:
+
+C++ → Punteros
+
+Mostrar:
+
+- Qué son
+- Para qué sirven
+- Sintaxis
+- Funcionamiento
+- Ejemplos
+- Errores frecuentes
+- Buenas prácticas
+- Cuándo utilizarlos
+- Cuándo evitarlos
+- Conceptos relacionados
+- Ejercicio
+- Mini desafío
+
+Crear búsqueda global.
+
+Una búsqueda como:
+
+"switch"
+
+debe encontrar contenido relevante de los lenguajes compatibles.
+
+El manual base debe estar almacenado y versionado.
+
+NO regenerar todo mediante IA en cada visita.
+
+---
+
+6. ADAPTACIÓN DEL MANUAL
+
+Permitir:
+
+- Explícamelo fácil
+- Explícamelo técnicamente
+- Dame otro ejemplo
+- Usa una analogía
+- Compáralo con otro lenguaje
+- Ponme un ejercicio
+- Hazme preguntas
+- Muéstrame errores frecuentes
+
+La IA puede transformar la explicación utilizando el contenido base como referencia.
+
+---
+
+7. APRENDIZAJE ENTRE LENGUAJES
+
+Sintavra debe aprovechar conocimientos anteriores.
+
+Si alguien sabe Python y comienza C++, puede mostrar equivalencias.
+
+Python:
+
+for i in range(5):
+
+C++:
+
+for (int i = 0; i < 5; i++)
+
+No asumir que dos conceptos son idénticos solamente porque parecen similares.
+
+Explicar también diferencias importantes.
+
+---
+
+8. DOMINIO DE CONCEPTOS
+
+No utilizar únicamente porcentajes generales.
+
+Registrar conceptos individualmente.
+
+Ejemplo:
+
+C++
+
+Variables — dominado
+Condicionales — dominado
+for — aprendiendo
+while — necesita práctica
+switch — pendiente
+Punteros — bloqueado
+
+El progreso debe basarse en evidencia.
+
+---
+
+9. TUTOR IA
+
+Crear un tutor contextual.
+
+Debe conocer, cuando sea necesario:
+
+- Lenguaje
+- Lección
+- Concepto
+- Progreso
+- Errores anteriores
+- Conceptos débiles
+- Ejercicios
+- Código actual autorizado
+- Preferencias educativas
+
+El tutor debe priorizar enseñar.
+
+No debe entregar inmediatamente una solución completa.
+
+---
+
+10. PISTAS PROGRESIVAS
+
+Ejemplo:
+
+Código:
+
+for (int i = 0; i < 10; i+)
+
+PISTA 1:
+
+Observa qué debería ocurrir con "i" después de cada iteración.
+
+PISTA 2:
+
+Necesitas incrementar "i".
+
+PISTA 3:
+
+Revisa el operador "++".
+
+Después de intentos suficientes puede explicar la solución completa.
+
+---
+
+11. MODOS DEL TUTOR
+
+STRICT
+
+- Preguntas
+- Pistas pequeñas
+- Sin soluciones inmediatas
+
+GUIDED
+
+- Predeterminado
+- Pistas progresivas
+- Explicaciones
+
+ASSIST
+
+- Proyectos reales
+- Mayor asistencia
+- Puede mostrar soluciones
+
+EXAM
+
+- Sin respuestas del tutor relacionadas con el examen
+- Sin pistas
+- Evaluación independiente
+
+---
+
+12. EJERCICIOS
+
+Cada concepto debe poseer ejercicios.
+
+Ejemplo:
+
+C++ / for
+
+DESAFÍO:
+
+Imprime los números pares entre 10 y 100.
+
+Evaluar mediante tests deterministas siempre que sea posible.
+
+Mostrar:
+
+Compilación ✓
+Resultado ✓
+Concepto solicitado ✓
+Casos límite ✓
+
+La IA no debe ser el único juez.
+
+---
+
+13. PLAYGROUND
+
+Crear editor integrado.
+
+Preferentemente Monaco Editor o una alternativa adecuada.
+
+Funciones:
+
+- Syntax highlighting
+- Numeración
+- Indentación
+- Autocompletado
+- Diagnósticos
+- Consola
+- Ejecutar
+- Detener
+- Reiniciar
+- Guardar
+- Varios archivos
+- Tutor
+- Pista
+- Explicar
+- Tests
+
+---
+
+14. RUNNER SEGURO
+
+Nunca ejecutar código arbitrario directamente sobre el servidor principal.
+
+Implementar aislamiento.
+
+Considerar:
+
+- Sandbox
+- CPU limitada
+- RAM limitada
+- Timeout
+- Número máximo de procesos
+- Filesystem restringido
+- Red restringida
+- Sin secretos
+- Limpieza automática
+- Tamaño máximo
+- Protección contra procesos infinitos
+
+Soportar:
+
+C
+C#
+C++
+Python
+Lua
+JavaScript
+Java
+
+---
+
+15. PROJECT MODE
+
+Permitir construir proyectos progresivamente.
+
+Ejemplo:
+
+Python → Calculadora
+
+PASO 1/10
+
+Crea dos variables.
+
+PASO 2/10
+
+Solicita datos al usuario.
+
+PASO 3/10
+
+Implementa una operación.
+
+Sintavra debe comprobar el trabajo antes de continuar cuando sea posible.
+
+No entregar automáticamente el proyecto terminado.
+
+---
+
+16. EXÁMENES
+
+Exam Mode debe incluir:
+
+- Banco de preguntas
+- Variaciones
+- Temporizador opcional
+- Tutor bloqueado
+- Pistas bloqueadas
+- Tests
+- Resultados por concepto
+
+Ejemplo:
+
+Variables 100%
+Condicionales 90%
+Loops 65%
+Funciones 70%
+
+Después generar un plan de repaso.
+
+---
+
+17. YA SÉ ESTO
+
+Agregar:
+
+Ya sé esto
+
+No marcar inmediatamente el concepto como dominado.
+
+Presentar una prueba corta.
+
+Si el usuario demuestra conocimiento:
+
+Concepto validado ✓
+
+---
+
+18. REPASO
+
+Crear un sistema que detecte:
+
+- Conceptos débiles
+- Fallos recientes
+- Conceptos olvidados
+- Tiempo sin practicar
+- Bajo rendimiento
+
+Crear sesiones de repaso.
+
+Aplicar principios razonables de repetición espaciada.
+
+---
+
+19. CUENTAS
+
+Implementar:
+
+- Registro
+- Login
+- Logout
+- Recuperación de contraseña
+- Cambio de contraseña
+- Perfil
+- Eliminación de cuenta
+- Sesiones persistentes
+- Sincronización entre dispositivos
+
+Nunca guardar contraseñas en texto plano.
+
+---
+
+20. PROGRESO
+
+La base de datos es la fuente principal.
+
+No depender exclusivamente de localStorage.
+
+Guardar como mínimo:
+
+User
+Profile
+Settings
+LanguageProgress
+ConceptProgress
+LessonProgress
+ExerciseAttempts
+Projects
+ProjectProgress
+Exams
+ExamAttempts
+Achievements
+TutorPreferences
+Activity
+StudySessions
+
+---
+
+21. PROGRESO REAL
+
+Guardar:
+
+- Lenguajes
+- Lecciones
+- Conceptos
+- Intentos
+- Errores
+- Exámenes
+- Proyectos
+- XP
+- Nivel
+- Racha
+- Tiempo
+- Actividad
+
+No inventar porcentajes.
+
+---
+
+22. OFFLINE
+
+Permitir cuando sea posible:
+
+- Manuales descargados
+- Lecciones
+- Editor
+- Algunos ejercicios
+- Progreso temporal
+
+Sincronizar cuando vuelva Internet.
+
+Diseñar resolución de conflictos.
+
+---
+
+23. PANTALLA PRINCIPAL
+
+Mostrar:
+
+SINTAVRA
+
+Aprende. Programa. Comprende.
+
+[1] >_ Terminal Mode
+[2] UI Mode
+[3] Configuración
+[4] Developer Codes
+
+Si no existe sesión:
+
+Iniciar sesión
+Crear cuenta
+
+Si existe una sesión válida, restaurarla.
+
+---
+
+24. UI MODE
+
+Navegación:
+
+Inicio
+Aprender
+Manual
+Playground
+Proyectos
+Desafíos
+Exámenes
+Progreso
+Tutor
+Terminal
+Configuración
+
+Dashboard:
+
+- Continuar
+- Lenguajes
+- Actividad
+- Progreso
+- Próxima lección
+- Repaso
+- Desafío diario
+- Conceptos débiles
+
+No crear un dashboard genérico.
+
+---
+
+25. TERMINAL MODE
+
+Debe ser completamente funcional.
+
+Ejemplo:
+
+sintavra@rodrigo:~$ progreso
+
+Python    ████████░░ 82%
+C++       ████░░░░░░ 41%
+C         ██░░░░░░░░ 24%
+
+Comandos:
+
+sintavra aprender cpp
+sintavra manual cpp punteros
+sintavra practicar cpp
+sintavra desafio cpp
+sintavra examen cpp
+sintavra proyectos
+sintavra progreso
+sintavra debilidades
+sintavra tutor
+sintavra pista
+sintavra explicar
+sintavra lenguajes
+sintavra configuracion
+sintavra ui
+
+Terminal Mode no debe ser una animación.
+
+Debe utilizar los mismos servicios y datos que UI Mode.
+
+---
+
+26. CLI
+
+Preparar un futuro CLI instalable.
+
+Ejemplo:
+
+sintavra analizar .
+
+sintavra explicar main.cpp
+
+sintavra depurar main.cpp
+
+sintavra quiz main.cpp
+
+sintavra revisar .
+
+Debe poder autenticarse y sincronizarse de manera segura.
+
+---
+
+27. DEVELOPER CODES
+
+Mostrar exactamente:
+
+[4] Developer Codes
+
+Pantalla:
+
+SINTAVRA — DEVELOPER CODES
+
+Enter developer code:
+
+«_»
+
+Código inicial:
+
+n-
+
+Resultado:
+
+Activar English Mode.
+
+Guardar la preferencia.
+
+Developer Codes debe ser modular.
+
+NUNCA utilizar Developer Codes para almacenar:
+
+- Contraseñas
+- API keys
+- Privilegios administrativos reales
+- Bypass de autenticación
+- Secretos
+
+---
+
+28. IDIOMAS
+
+Idioma predeterminado:
+
+Español.
+
+Inicialmente:
+
+es
+en
+
+Usar i18n correctamente.
+
+No repartir strings importantes directamente por componentes.
+
+"n-" establece inglés.
+
+El idioma también puede cambiarse normalmente desde Configuración.
+
+---
+
+29. GAMIFICACIÓN
+
+Incluir:
+
+- XP
+- Niveles
+- Rachas
+- Logros
+- Desafíos
+- Estadísticas
+
+Premiar aprendizaje demostrado, no simplemente tiempo dentro de la aplicación.
+
+---
+
+30. ESTADÍSTICAS
+
+Mostrar:
+
+- Tiempo estudiado
+- Conceptos dominados
+- Conceptos débiles
+- Actividad semanal
+- Lenguajes
+- Proyectos
+- Exámenes
+- Evolución
+
+Basarse en datos reales.
+
+---
+
+31. WEB + DESKTOP
+
+Mantener una base compartida.
+
+Estructura conceptual:
+
+/apps
+/web
+/desktop
+
+/packages
+/ui
+/core
+/tutor
+/manuals
+/languages
+/editor
+/i18n
+/shared
+
+/services
+/api
+/runner
+
+/docs
+
+Puedes modificar esta estructura si existe una arquitectura mejor.
+
+Explica por qué.
+
+---
+
+32. DESKTOP
+
+Evaluar Tauri como primera opción.
+
+Comparar técnicamente con alternativas antes de decidir.
+
+La aplicación desktop debe compartir:
+
+- UI
+- Cuenta
+- Progreso
+- Manuales
+- Servicios
+- Tutor
+
+con la versión web.
+
+---
+
+33. API
+
+Crear una API versionada.
+
+Ejemplo:
+
+/api/v1/auth
+/api/v1/users
+/api/v1/progress
+/api/v1/languages
+/api/v1/lessons
+/api/v1/exercises
+/api/v1/projects
+/api/v1/exams
+/api/v1/tutor
+/api/v1/runner
+
+Implementar:
+
+- Validación
+- Autorización
+- Errores consistentes
+- Logging
+- Rate limiting
+- Versionado
+
+---
+
+34. SEGURIDAD
+
+Considerar como mínimo:
+
+- XSS
+- CSRF
+- SQL injection
+- Brute force
+- Session hijacking
+- CORS
+- Rate limiting
+- Validación del servidor
+- Autorización
+- Secrets
+- Dependencias
+- Sandboxing
+- Uploads
+- Inyección de comandos
+
+Nunca confiar únicamente en el frontend.
+
+---
+
+35. SECRETS
+
+Nunca colocar secretos en:
+
+- Código
+- Frontend
+- Git
+- README
+- Developer Codes
+
+Crear:
+
+.env.example
+
+Ignorar:
+
+.env
+
+mediante ".gitignore".
+
+---
+
+36. PRIVACIDAD
+
+Recolectar únicamente información necesaria.
+
+Permitir:
+
+- Exportar datos cuando sea apropiado
+- Eliminar cuenta
+- Eliminar información asociada
+
+Documentar qué información puede recibir el tutor IA.
+
+---
+
+37. ACCESIBILIDAD
+
+Implementar:
+
+- Navegación por teclado
+- Focus visible
+- Labels
+- Contraste
+- Lectores de pantalla
+- Reduced motion
+- Tamaño de fuente
+- Zoom razonable
+
+---
+
+38. DISEÑO VISUAL
+
+Sintavra debe ser:
+
+- Hermosa
+- Técnica
+- Minimalista
+- Profesional
+- Moderna
+- Rápida
+- Reconocible
+- Coherente
+
+Debe sentirse hecha por diseñadores y desarrolladores que realmente utilizan herramientas de programación.
+
+Crear un sistema de diseño propio.
+
+Definir:
+
+- Tokens
+- Espaciado
+- Tipografía
+- Radios
+- Elevación
+- Iconos
+- Estados
+- Componentes
+- Animaciones
+
+Ofrecer:
+
+Claro
+Oscuro
+Sistema
+
+---
+
+39. MICROINTERACCIONES
+
+Añadir pequeños detalles donde mejoren la experiencia:
+
+- Feedback al ejecutar
+- Transiciones cortas
+- Estados de carga
+- Guardado
+- Errores
+- Éxito
+- Cambio de lección
+- Tests
+
+No animar por animar.
+
+---
+
+40. TEXTO HUMANO
+
+Todo el copy debe sonar natural.
+
+Evitar frases genéricas típicas como:
+
+"Embark on your coding journey."
+
+"Unlock your potential."
+
+"Revolutionize your learning."
+
+"Powered by cutting-edge AI."
+
+Escribir textos simples y específicos.
+
+Ejemplo:
+
+En vez de:
+
+"¡Increíble! ¡Has desbloqueado el poder de los bucles!"
+
+usar:
+
+"Bien. Ya puedes escribir un "for" básico. Ahora prueba uno sin el ejemplo delante."
+
+Los mensajes de error deben explicar qué ocurrió y qué puede hacer el usuario.
+
+---
+
+41. CALIDAD DEL CÓDIGO
+
+El código también debe sentirse escrito y mantenido deliberadamente.
+
+Utilizar:
+
+- Nombres claros
+- Funciones pequeñas cuando corresponda
+- Abstracciones justificadas
+- Comentarios solamente cuando aporten contexto
+- Tipos correctos
+- Manejo de errores
+- Tests
+- Documentación de decisiones complejas
+
+Evitar:
+
+- Overengineering
+- Abstracciones inútiles
+- Funciones gigantes
+- Archivos gigantes
+- Nombres absurdamente genéricos
+- Comentarios que simplemente repitan el código
+- Patrones copiados mecánicamente
+
+---
+
+42. NO OPTIMIZAR PARA "PARECER HUMANO" MEDIANTE ERRORES
+
+No introducir deliberadamente:
+
+- Bugs
+- Typos
+- Inconsistencias
+- Código peor
+- Comentarios falsos
+- Commits falsificados
+- Nombres malos
+
+La sensación artesanal debe provenir de decisiones coherentes y atención al detalle, no de errores artificiales.
+
+---
+
+43. RENDIMIENTO
+
+Priorizar:
+
+- Carga rápida
+- Lazy loading
+- Code splitting
+- Caché
+- Consultas eficientes
+- Índices de base de datos
+- Paginación
+- Optimización de assets
+
+Sintavra debe funcionar razonablemente en hardware modesto.
+
+---
+
+44. CONTENIDO EDUCATIVO
+
+Separar contenido educativo de componentes visuales cuando sea razonable.
+
+Debe ser posible añadir:
+
+- Lecciones
+- Ejercicios
+- Proyectos
+- Exámenes
+- Manuales
+
+sin reescribir la interfaz.
+
+---
+
+45. MÓDULOS DE LENGUAJES
+
+Ejemplo conceptual:
+
+/languages/python
+/languages/c
+/languages/cpp
+/languages/csharp
+/languages/lua
+/languages/javascript
+/languages/java
+
+Cada módulo puede contener:
+
+manifest
+concepts
+manual
+lessons
+exercises
+challenges
+projects
+exams
+tests
+runner
+
+Evitar:
+
+if language === "python"
+else if language === "cpp"
+else if...
+
+por todo el código.
+
+---
+
+46. GITHUB
+
+El proyecto debe vivir correctamente en GitHub.
+
+Crear:
+
+README.md
+LICENSE
+CONTRIBUTING.md
+SECURITY.md
+CHANGELOG.md
+.env.example
+.gitignore
+
+Documentar:
+
+- Instalación
+- Desarrollo
+- Arquitectura
+- Base de datos
+- API
+- Runner
+- Tutor
+- Lenguajes
+- Manuales
+- Ejercicios
+- Testing
+- Desktop
+- Web
+- Deployment
+- CLI
+
+---
+
+47. CI/CD
+
+Configurar automatización para:
+
+- Lint
+- Formatting checks
+- Type checking
+- Unit tests
+- Integration tests
+- Build
+- Security checks razonables
+
+Los cambios rotos no deben llegar silenciosamente a producción.
+
+---
+
+48. TESTING
+
+Implementar:
+
+- Unit tests
+- Integration tests
+- API tests
+- Authentication tests
+- Database tests
+- Progress tests
+- Runner tests
+- Educational logic tests
+- UI tests críticos
+
+Las funciones importantes deben ser comprobables.
+
+---
+
+49. HISTORIAL GIT
+
+Utilizar commits descriptivos.
+
+Ejemplos:
+
+feat(auth): add persistent user sessions
+
+feat(cpp): add loops learning path
+
+fix(runner): terminate processes after timeout
+
+test(progress): cover concept mastery calculation
+
+No utilizar:
+
+update stuff
+
+changes
+
+final
+
+final2
+
+working
+
+---
+
+50. MVP
+
+No intentar construir 300 000 líneas antes de tener algo funcional.
+
+Orden recomendado:
+
+1. Arquitectura
+2. Monorepo
+3. Sistema de diseño
+4. Base de datos
+5. Autenticación
+6. Dashboard
+7. Python
+8. C++
+9. Manual
+10. Lecciones
+11. Ejercicios
+12. Playground
+13. Runner
+14. Progreso
+15. Tutor IA
+16. Terminal Mode
+17. Exámenes
+18. Proyectos
+19. C
+20. JavaScript
+21. Java
+22. C#
+23. Lua
+24. Desktop
+25. Offline
+26. CLI
+27. Expansión masiva del contenido
+
+Cada fase debe dejar Sintavra ejecutable.
+
+---
+
+51. NO SIMULAR FUNCIONALIDAD
+
+Si algo todavía no está implementado:
+
+mostrar claramente:
+
+"Próximamente"
+
+o mantenerlo fuera de producción.
+
+NO crear botones que aparenten funcionar.
+
+NO fabricar estadísticas.
+
+NO simular respuestas del servidor.
+
+NO marcar funciones incompletas como terminadas.
+
+---
+
+52. DOCUMENTACIÓN DE DECISIONES
+
+Para decisiones arquitectónicas importantes, mantener ADRs:
+
+/docs/adr/
+
+Ejemplo:
+
+0001-monorepo.md
+0002-authentication.md
+0003-code-runner.md
+0004-desktop-framework.md
+
+Explicar:
+
+Contexto
+Opciones
+Decisión
+Consecuencias
+
+---
+
+53. OBSERVABILIDAD
+
+Preparar:
+
+- Logging
+- Errores
+- Métricas importantes
+- Diagnóstico
+
+No registrar:
+
+- Contraseñas
+- Tokens
+- API keys
+- Código privado innecesariamente
+- Datos sensibles
+
+---
+
+54. EXPERIENCIA SIN IA
+
+Sintavra debe seguir siendo útil aunque el tutor IA esté temporalmente indisponible.
+
+Deben seguir funcionando:
+
+- Manual
+- Lecciones
+- Ejercicios deterministas
+- Progreso
+- Editor
+- Contenido descargado
+- Proyectos compatibles
+
+La IA mejora Sintavra.
+
+No debe ser la única razón por la que funciona.
+
+---
+
+55. COSTOS
+
+Diseñar pensando inicialmente en costos bajos.
+
+Antes de elegir servicios externos, indicar:
+
+- Precio aproximado
+- Free tier
+- Límites
+- Alternativas
+- Riesgo de vendor lock-in
+
+No contratar automáticamente servicios innecesarios.
+
+---
+
+56. ESCALABILIDAD
+
+Preparar una arquitectura que pueda crecer desde pocos usuarios hasta una comunidad considerable.
+
+Pero NO construir infraestructura absurda para millones de usuarios antes de necesitarla.
+
+Priorizar arquitectura limpia y posibilidad de migración.
+
+---
+
+57. RESULTADO ESPERADO
+
+Quiero que Sintavra eventualmente sea una plataforma en la que una persona pueda pasar de:
+
+"No sé qué es una variable."
+
+a:
+
+"Puedo diseñar, programar, depurar y terminar proyectos por mi cuenta."
+
+La métrica principal no debe ser cuánto contenido consumió.
+
+Debe ser cuánto puede hacer sin ayuda.
+
+---
+
+58. ANTES DE ESCRIBIR CÓDIGO
+
+NO empieces inmediatamente.
+
+Primero analiza la especificación completa.
+
+Entrega:
+
+1. Arquitectura recomendada
+2. Stack
+3. Frontend
+4. Backend
+5. Base de datos
+6. Autenticación
+7. Desktop
+8. Runner
+9. Tutor IA
+10. Monorepo
+11. Modelo de datos
+12. Sistema modular de lenguajes
+13. Sistema educativo
+14. Sistema de progreso
+15. Seguridad
+16. Testing
+17. CI/CD
+18. Hosting
+19. Costos
+20. Roadmap
+
+Explica decisiones importantes.
+
+---
+
+59. INFORMACIÓN QUE DEBES PEDIRME
+
+Después del análisis, pregúntame únicamente por decisiones necesarias que no puedas resolver razonablemente.
+
+Debes comprobar si necesitas:
+
+- Usuario u organización de GitHub
+- Nombre del repositorio
+- Público o privado
+- Licencia
+- Proveedor de base de datos
+- Autenticación
+- Hosting
+- Proveedor/modelo IA
+- Presupuesto mensual
+- Dominio
+- Login con Google
+- Login con GitHub
+- Monetización
+- Gratuito/premium
+- Límites de IA
+- Branding
+- Colores
+- Logo
+- Preferencias de desktop
+
+Cuando exista una buena opción gratuita, recomiéndala.
+
+---
+
+60. NUNCA PEDIR SECRETOS DIRECTAMENTE
+
+No solicitar que pegue en el chat:
+
+- Contraseñas
+- Private keys
+- Tokens
+- GitHub PAT
+- API keys
+
+En su lugar:
+
+1. Crear ".env.example".
+2. Indicar el nombre de la variable.
+3. Explicar dónde debe configurarse.
+4. Mantener ".env" fuera de Git.
+
+---
+
+61. PLAN FINAL ANTES DE IMPLEMENTAR
+
+Después de resolver las preguntas necesarias, entregar:
+
+SINTAVRA — PLAN DE CONSTRUCCIÓN
+
+Debe contener:
+
+- Objetivo
+- Stack final
+- Arquitectura
+- Estructura del repositorio
+- Modelo de datos
+- Autenticación
+- IA
+- Runner
+- Web
+- Desktop
+- Lenguajes
+- Seguridad
+- Testing
+- Deployment
+- Fases
+- Costos
+- Decisiones pendientes
+
+Esperar confirmación antes de comenzar una implementación grande.
+
+---
+
+62. REGLA FINAL
+
+No persigas cantidad por encima de calidad.
+
+Quiero un proyecto grande porque Sintavra hace muchas cosas reales, no porque el repositorio esté artificialmente inflado.
+
+Si con el tiempo el proyecto supera 300 000 líneas útiles, perfecto.
+
+Cada archivo, módulo, dependencia y abstracción debe poder responder:
+
+¿Por qué existe esto?
+
+Si la respuesta es únicamente:
+
+"Para hacer el proyecto más grande."
+
+elimínalo.
+
+Construye Sintavra como un producto que alguien realmente querría instalar, utilizar para aprender durante años y recomendar a otra persona.

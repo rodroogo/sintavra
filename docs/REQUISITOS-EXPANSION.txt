@@ -1,0 +1,1204 @@
+# EXPANSIÓN DE SINTAVRA — PLATAFORMA COMPLETA
+
+Quiero ampliar Sintavra para que no sea simplemente una colección de cursos.
+
+Debe sentirse como una plataforma completa de aprendizaje y desarrollo de software.
+
+Toda la aplicación debe estar conectada entre sí.
+
+NO crear páginas aisladas.
+NO crear botones falsos.
+NO crear secciones visuales sin funcionalidad.
+NO utilizar datos simulados como si fueran reales.
+
+La estructura principal será:
+
+SINTAVRA
+├── Inicio
+├── Aprender
+├── Categorías
+├── Mis proyectos
+├── Terminal
+├── Playground
+├── Progreso
+├── Perfil
+└── Ajustes
+
+==================================================
+1. CATEGORÍAS
+==================================================
+
+Crear una página:
+
+/categorias
+
+Organizar todo el aprendizaje por categorías.
+
+Categorías iniciales:
+
+PROGRAMACIÓN
+- Python
+- C
+- C++
+- C#
+- Java
+- JavaScript
+- Lua
+
+DESARROLLO WEB
+- HTML
+- CSS
+- JavaScript
+- APIs
+- HTTP
+- JSON
+
+SISTEMAS
+- Linux
+- Terminal
+- Bash
+- procesos
+- archivos
+- permisos
+
+BASES DE DATOS
+- SQL
+- SQLite
+- PostgreSQL
+
+HERRAMIENTAS
+- Git
+- GitHub
+- debugging
+- VS Code
+- terminal
+
+CONCEPTOS
+- algoritmos
+- estructuras de datos
+- lógica
+- programación orientada a objetos
+- arquitectura básica de software
+
+Cada categoría debe mostrar:
+
+nombre
+icono
+descripción
+cursos
+progreso
+nivel actual
+horas estudiadas
+última actividad
+
+Ejemplo:
+
+Python
+████████░░ 78%
+
+Nivel: Intermedio
+12 módulos completados
+18 h estudiadas
+
+[Continuar]
+
+==================================================
+2. RUTA DE APRENDIZAJE
+==================================================
+
+Cada lenguaje debe tener una ruta clara.
+
+Ejemplo:
+
+PYTHON
+
+01 Introducción
+02 Variables
+03 Tipos
+04 Operadores
+05 Condicionales
+06 Loops
+07 Funciones
+08 Listas
+09 Diccionarios
+10 Archivos
+11 Excepciones
+12 Módulos
+13 OOP
+14 APIs
+15 JSON
+16 SQLite
+17 Proyecto final
+
+Los módulos deben tener dependencias.
+
+No permitir que la aplicación se sienta como una lista infinita de artículos.
+
+Mostrar visualmente:
+
+Principiante
+↓
+Intermedio
+↓
+Avanzado
+
+==================================================
+3. PROYECTO POR CADA SECCIÓN
+==================================================
+
+ESTO ES MUY IMPORTANTE.
+
+Cada concepto importante debe terminar utilizándose.
+
+No enseñar:
+
+“for significa esto”
+
+y continuar.
+
+Utilizar:
+
+TEORÍA
+↓
+EJEMPLO
+↓
+EXPLICACIÓN INTERACTIVA
+↓
+EJERCICIO
+↓
+TERMINAL / PLAYGROUND
+↓
+MINIPROYECTO
+
+Ejemplo:
+
+Módulo:
+Loops
+
+Después de aprender `for`:
+
+PROYECTO
+
+“Contador inteligente”
+
+El usuario debe construir un programa que:
+
+- reciba un número
+- utilice un loop
+- procese valores
+- muestre resultados
+
+Dificultad del proyecto proporcional al módulo.
+
+Principiante:
+proyectos pequeños.
+
+Intermedio:
+proyectos con varias partes.
+
+Avanzado:
+proyectos completos.
+
+==================================================
+4. PROYECTOS GRANDES POR LENGUAJE
+==================================================
+
+Cada lenguaje debe tener varios proyectos principales.
+
+Ejemplo Python:
+
+Principiante:
+Calculadora CLI
+
+Principiante:
+Adivina el número
+
+Intermedio:
+Gestor de tareas
+
+Intermedio:
+Organizador automático de archivos
+
+Intermedio:
+Cliente de una API
+
+Avanzado:
+API propia
+
+Avanzado:
+Aplicación con base de datos
+
+Proyecto final:
+aplicación completa.
+
+C++:
+
+calculadora
+sistema de inventario
+juego de consola
+gestor de archivos
+proyecto Arduino/ESP32 opcional
+
+JavaScript:
+
+calculadora web
+To-Do
+dashboard
+cliente API
+aplicación web completa
+
+Cada lenguaje debe tener proyectos específicamente diseñados para lo que ese lenguaje hace bien.
+
+==================================================
+5. MIS PROYECTOS
+==================================================
+
+Crear:
+
+/proyectos
+
+Diseño inspirado conceptualmente en un gestor de repositorios.
+
+Mostrar:
+
+MIS PROYECTOS
+
+┌────────────────────────────────────┐
+│ gestor-tareas-python               │
+│ Python                             │
+│                                    │
+│ Proyecto del módulo de funciones   │
+│                                    │
+│ ● En progreso                      │
+│ Última edición: hace 12 minutos    │
+└────────────────────────────────────┘
+
+Permitir:
+
+Crear proyecto
+Abrir
+Renombrar
+Duplicar
+Eliminar
+Exportar
+Continuar
+
+Filtros:
+
+Todos
+Python
+C
+C++
+C#
+Java
+JavaScript
+Lua
+
+Estados:
+
+No iniciado
+En progreso
+Completado
+
+==================================================
+6. EDITOR
+==================================================
+
+Cada proyecto debe tener un editor real.
+
+Diseño:
+
+FILES          EDITOR
+────────       ─────────────────────
+
+main.py        código...
+utils.py
+README.md
+
+Debajo:
+
+TERMINAL
+──────────────────────────────
+
+>
+
+Funciones:
+
+crear archivo
+crear carpeta
+renombrar
+eliminar
+guardar
+ejecutar cuando sea técnicamente posible
+
+Implementar syntax highlighting.
+
+No intentar crear un IDE gigantesco innecesariamente.
+
+Debe ser rápido y educativo.
+
+==================================================
+7. EXPLICACIÓN DE CÓDIGO
+==================================================
+
+Mantener la filosofía principal de Sintavra.
+
+El usuario debe poder pulsar partes del código.
+
+Ejemplo:
+
+def
+
+Al pulsarlo:
+
+────────────────────
+
+def
+
+Sirve para definir una función.
+
+Ejemplo:
+
+def saludar():
+    print("Hola")
+
+En conjunto:
+
+def + nombre + () + :
+
+crean una función.
+
+[Entendido]
+
+────────────────────
+
+Lo mismo con:
+
+if
+else
+elif
+for
+while
+return
+import
+#include
+class
+public
+private
+etc.
+
+NO explicar únicamente palabras individuales.
+
+También explicar cómo funcionan EN CONJUNTO.
+
+==================================================
+8. TERMINAL
+==================================================
+
+Crear una terminal educativa integrada.
+
+Debe servir para practicar:
+
+Python
+Git
+Linux
+compilación
+ejecución de programas
+
+Cuando el usuario escriba:
+
+python main.py
+
+mostrar la salida.
+
+Para operaciones que no puedan ejecutarse realmente en navegador:
+
+crear sandbox seguro o simulación claramente indicada.
+
+NO fingir que un comando fue ejecutado realmente cuando no lo fue.
+
+==================================================
+9. GITHUB
+==================================================
+
+Crear integración real con GitHub.
+
+Añadir en:
+
+Ajustes
+→ Integraciones
+→ GitHub
+
+Botón:
+
+[ Conectar GitHub ]
+
+Utilizar OAuth oficial de GitHub.
+
+NUNCA solicitar al usuario directamente su contraseña de GitHub.
+
+NUNCA guardar tokens sin protección.
+
+Después de conectar:
+
+GitHub
+✓ Conectado
+
+@username
+
+Permitir:
+
+Desconectar
+Cambiar cuenta
+
+==================================================
+10. PUBLICAR PROYECTOS EN GITHUB
+==================================================
+
+Dentro de cada proyecto:
+
+[ Publicar en GitHub ]
+
+Flujo:
+
+Proyecto Sintavra
+↓
+Crear repositorio
+↓
+Nombre
+↓
+Descripción
+↓
+Público / Privado
+↓
+Crear README
+↓
+Publicar
+
+Después mostrar:
+
+✓ Publicado en GitHub
+
+github.com/usuario/proyecto
+
+Añadir:
+
+[ Abrir GitHub ]
+
+[ Sincronizar ]
+
+==================================================
+11. SINCRONIZACIÓN
+==================================================
+
+Mantener relación:
+
+Proyecto Sintavra
+↔
+Repositorio GitHub
+
+Guardar:
+
+github_repository_id
+github_repository_url
+default_branch
+last_sync
+sync_status
+
+Estados:
+
+Sin conectar
+Sincronizado
+Cambios locales
+Cambios remotos
+Conflicto
+
+NO sobrescribir archivos silenciosamente.
+
+Si existe conflicto:
+
+mostrar qué archivos cambiaron.
+
+==================================================
+12. COMMITS EDUCATIVOS
+==================================================
+
+Utilizar GitHub también para enseñar Git.
+
+Cuando el usuario complete una parte:
+
+Sintavra puede sugerir:
+
+“Has terminado el sistema de login.”
+
+¿Quieres crear un commit?
+
+Mensaje sugerido:
+
+feat: implementar sistema de login
+
+Pero permitir editarlo.
+
+Después:
+
+Commit realizado.
+
+Esto enseña:
+
+commits
+branches
+repositorios
+versionado
+
+mientras el usuario programa.
+
+==================================================
+13. IMPORTAR DESDE GITHUB
+==================================================
+
+Añadir:
+
+[ Importar repositorio ]
+
+Después de conectar GitHub:
+
+mostrar repositorios accesibles autorizados por el usuario.
+
+Permitir seleccionar uno.
+
+Importarlo como proyecto de Sintavra.
+
+NO solicitar acceso a repositorios que el usuario no haya autorizado.
+
+==================================================
+14. PERFIL
+==================================================
+
+Crear:
+
+/perfil
+
+Mostrar:
+
+Avatar
+Username
+Nombre
+
+Nivel Sintavra
+
+XP
+
+Racha
+
+Cursos completados
+
+Proyectos completados
+
+Lenguajes estudiados
+
+Tiempo programando
+
+Ejemplo:
+
+RODRIGO
+
+Nivel 14
+
+Python        ███████░░
+C++           ████░░░░░
+JavaScript    ███░░░░░░
+
+12 proyectos
+84 ejercicios
+23 módulos
+
+==================================================
+15. ACTIVIDAD
+==================================================
+
+Añadir actividad reciente.
+
+Ejemplo:
+
+Hoy
+
+✓ Completaste “Funciones en Python”
+
+● Continuaste “Gestor de tareas”
+
+↑ Publicaste un proyecto en GitHub
+
++ Aprendiste diccionarios
+
+No crear una red social todavía.
+
+Es actividad PERSONAL.
+
+==================================================
+16. ESTADÍSTICAS
+==================================================
+
+Crear:
+
+/perfil/estadisticas
+
+Mostrar:
+
+Tiempo estudiado
+Ejercicios
+Proyectos
+Lenguajes
+Racha
+Actividad semanal
+
+Crear un heatmap inspirado conceptualmente en calendarios de actividad.
+
+NO copiar exactamente el gráfico de contribuciones de GitHub.
+
+Cada celda representa actividad de programación/aprendizaje.
+
+==================================================
+17. AJUSTES
+==================================================
+
+Crear:
+
+/ajustes
+
+Secciones:
+
+CUENTA
+
+Perfil
+Email
+Contraseña
+Sesiones
+
+APARIENCIA
+
+Claro
+Oscuro
+Sistema
+
+Editor:
+
+tamaño de fuente
+tab size
+word wrap
+
+APRENDIZAJE
+
+Dificultad
+Objetivo diario
+Recordatorios
+Modo aprendizaje
+
+INTEGRACIONES
+
+GitHub
+
+DATOS
+
+Exportar progreso
+Importar
+Eliminar datos
+
+PRIVACIDAD
+
+Preferencias de privacidad
+
+==================================================
+18. INICIO DE SESIÓN
+==================================================
+
+Al abrir Sintavra por primera vez:
+
+Bienvenido a Sintavra
+
+[ Iniciar sesión ]
+
+[ Crear cuenta ]
+
+[ Continuar offline ]
+
+Si utiliza:
+
+Continuar offline
+
+guardar progreso localmente.
+
+Mostrar:
+
+“Tu progreso se guarda en este dispositivo.”
+
+Posteriormente:
+
+[ Crear cuenta y sincronizar ]
+
+Debe poder migrar el progreso local a su cuenta SIN perderlo.
+
+==================================================
+19. HOME
+==================================================
+
+La página principal después del login debe ser útil.
+
+Ejemplo:
+
+Buenas tardes, Rodrigo.
+
+CONTINUAR
+
+Python
+Diccionarios
+72%
+
+[ Continuar ]
+
+────────────────────
+
+TU OBJETIVO
+
+18 / 20 min
+
+────────────────────
+
+PROYECTO ACTUAL
+
+gestor-tareas
+
+Python
+
+[ Continuar proyecto ]
+
+────────────────────
+
+ACTIVIDAD
+
+🔥 6 días
+
+────────────────────
+
+RECOMENDADO
+
+APIs con Python
+
+==================================================
+20. NAVEGACIÓN
+==================================================
+
+Desktop:
+
+SINTAVRA
+
+Inicio
+Aprender
+Categorías
+Proyectos
+Playground
+Terminal
+
+────────────
+
+Progreso
+
+────────────
+
+Perfil
+Ajustes
+
+Móvil:
+
+Inicio
+Aprender
+Código
+Proyectos
+Perfil
+
+==================================================
+21. BASE DE DATOS
+==================================================
+
+Diseñar correctamente entidades similares a:
+
+users
+profiles
+courses
+categories
+modules
+lessons
+exercises
+projects
+project_files
+project_progress
+course_progress
+lesson_progress
+achievements
+activity_events
+github_connections
+github_repositories
+user_settings
+
+No guardar todo como un JSON gigantesco.
+
+Crear relaciones apropiadas.
+
+==================================================
+22. SEGURIDAD DE GITHUB
+==================================================
+
+MUY IMPORTANTE.
+
+GitHub OAuth debe ocurrir server-side cuando corresponda.
+
+NO:
+
+- poner client secrets en frontend
+- poner tokens privados en localStorage
+- pedir contraseñas
+- mostrar tokens
+- guardar credenciales en GitHub
+
+Usar permisos mínimos.
+
+Si solamente necesitamos repositorios específicos:
+
+pedir únicamente los permisos necesarios.
+
+==================================================
+23. REPOSITORIO DEL PROPIO SINTAVRA
+==================================================
+
+Además de integrar los proyectos de los usuarios con GitHub:
+
+preparar EL PROPIO PROYECTO SINTAVRA para GitHub.
+
+Crear:
+
+.gitignore
+README.md
+LICENSE si se selecciona una
+.env.example
+
+Estructura profesional.
+
+README:
+
+# Sintavra
+
+Descripción
+
+Características
+
+Capturas
+
+Instalación
+
+Desarrollo
+
+Variables de entorno
+
+Arquitectura
+
+GitHub OAuth
+
+Base de datos
+
+Build
+
+Deploy
+
+Roadmap
+
+NO subir:
+
+.env
+tokens
+contraseñas
+API keys
+node_modules
+builds innecesarios
+
+==================================================
+24. CREAR REPOSITORIO
+==================================================
+
+Si el entorno donde estás ejecutándote tiene integración autorizada con GitHub:
+
+CREA automáticamente un repositorio llamado:
+
+sintavra
+
+Si ya existe:
+
+NO destruirlo.
+
+Comprobar primero su contenido.
+
+Si es un proyecto existente, integrarse cuidadosamente.
+
+Repositorio preferentemente:
+
+sintavra
+
+Descripción:
+
+“Plataforma interactiva para aprender programación construyendo proyectos reales.”
+
+Crear commit inicial únicamente cuando el proyecto esté en un estado funcional.
+
+Si NO tienes autorización para crear repositorios:
+
+NO simules que lo hiciste.
+
+Deja el proyecto preparado para GitHub y explícame exactamente qué acción debo autorizar.
+
+==================================================
+25. FILOSOFÍA EDUCATIVA
+==================================================
+
+ESTO ES FUNDAMENTAL.
+
+Sintavra NO debe convertir al usuario en alguien que solamente copia código.
+
+Debe obligarlo progresivamente a pensar.
+
+Nivel inicial:
+
+más ayuda.
+
+Nivel intermedio:
+
+menos ayuda.
+
+Nivel avanzado:
+
+pistas únicamente.
+
+Ejemplo:
+
+Principiante:
+
+Completa:
+
+for i in _____:
+
+Intermedio:
+
+“Recorre todos los usuarios y muestra sus nombres.”
+
+Avanzado:
+
+“Implementa esta funcionalidad.”
+
+La aplicación debe reducir gradualmente la asistencia.
+
+==================================================
+26. MODO “NO ME DES LA RESPUESTA”
+==================================================
+
+Añadir opción:
+
+MODO APRENDER
+
+Cuando esté activo:
+
+NO mostrar directamente la solución.
+
+Sistema:
+
+Error
+↓
+explicación
+↓
+pista 1
+↓
+nuevo intento
+↓
+pista 2
+↓
+nuevo intento
+↓
+explicación detallada
+↓
+solución solamente como último recurso
+
+Este debe ser el modo recomendado.
+
+==================================================
+27. PROGRESIÓN
+==================================================
+
+El progreso debe representar capacidad real.
+
+NO dar XP simplemente por abrir páginas.
+
+Dar progreso por:
+
+resolver ejercicios
+completar proyectos
+corregir errores
+superar pruebas
+terminar módulos
+
+Cada cierto número de módulos:
+
+CHECKPOINT
+
+Sin pistas excesivas.
+
+Esto verifica que realmente aprendió.
+
+==================================================
+28. UI HUMANA
+==================================================
+
+Sintavra debe sentirse diseñada por un equipo humano.
+
+Evitar:
+
+gradientes genéricos por todas partes
+cards gigantes
+texto excesivamente centrado
+frases vacías de marketing
+emojis innecesarios
+animaciones constantes
+interfaces típicas generadas por IA
+
+Utilizar:
+
+espaciado consistente
+jerarquía visual
+microinteracciones discretas
+tipografía excelente
+iconografía coherente
+estados hover/focus
+skeleton loading
+empty states
+errores útiles
+
+Debe sentirse como un PRODUCTO, no como una demo.
+
+==================================================
+29. TODO DEBE ESTAR CONECTADO
+==================================================
+
+Ejemplo del flujo real:
+
+Crear cuenta
+↓
+Elegir Python
+↓
+Aprender variables
+↓
+Ejercicio
+↓
+Terminal
+↓
+Aprender if
+↓
+Ejercicio
+↓
+Mini proyecto
+↓
+Guardar en Mis proyectos
+↓
+Aprender funciones
+↓
+Mejorar proyecto
+↓
+Commit
+↓
+GitHub
+↓
+Proyecto final
+↓
+Perfil actualizado
+
+Nada debe existir aisladamente.
+
+==================================================
+30. PRIORIDAD DE IMPLEMENTACIÓN
+==================================================
+
+FASE 1
+
+Cuenta/offline
+Perfil
+Ajustes
+Categorías
+Cursos
+Progreso
+
+FASE 2
+
+Editor
+Terminal
+Ejercicios
+Proyectos
+
+FASE 3
+
+Git
+GitHub OAuth
+Publicar repositorios
+Sincronización
+
+FASE 4
+
+Estadísticas
+Actividad
+Achievements
+Mejoras educativas
+
+FASE 5
+
+Pulido completo
+PWA
+Offline avanzado
+Rendimiento
+Accesibilidad
+
+NO intentes implementar superficialmente todo al mismo tiempo.
+
+Primero haz que cada fase FUNCIONE.
+
+==================================================
+31. REGLA FINAL
+==================================================
+
+Analiza primero el código existente de Sintavra.
+
+NO reconstruyas innecesariamente partes que ya funcionan.
+
+NO elimines características existentes.
+
+NO reemplaces código funcional por placeholders.
+
+NO rompas compatibilidad.
+
+Antes de modificar:
+
+1. analiza arquitectura actual
+2. identifica componentes existentes
+3. identifica base de datos
+4. identifica autenticación
+5. identifica sistema educativo
+6. crea plan de migración
+7. implementa progresivamente
+8. prueba cada flujo
+
+Al terminar cada fase:
+
+- ejecutar tests
+- revisar errores TypeScript
+- revisar consola
+- probar responsive
+- probar navegación
+- comprobar persistencia
+- comprobar autenticación
+- comprobar permisos
+
+No consideres una característica terminada solamente porque visualmente existe.
+
+Una característica está terminada cuando FUNCIONA.

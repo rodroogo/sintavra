@@ -1,0 +1,179 @@
+{
+  "name": "JavaScript",
+  "mark": "JS",
+  "color": "#eadb72",
+  "desc": "Da comportamiento a la web.",
+  "en": "Give the web its behavior.",
+  "ext": "js",
+  "runner": "javascript",
+  "id": "javascript",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "javascript-inicio",
+      "concept": "inicio",
+      "title": "Primer programa",
+      "titleEn": "First program",
+      "minutes": 5,
+      "body": "console.log escribe en la consola. Este playground ejecuta JavaScript sin DOM: no hay document ni botones de una página. El lenguaje también se usa en servidores y navegadores.",
+      "bodyEn": "Run the complete example and trace each instruction from top to bottom. Text literals use quotes; identifiers refer to names in the program.",
+      "code": "const nombre = \"Ada\";\nconsole.log(\"Hola,\", nombre);",
+      "pitfall": "El código distingue mayúsculas: console y Console no son el mismo nombre.",
+      "pitfallEn": "Text literals use quotes; identifiers refer to names in the program.",
+      "exercise": "Cambia el saludo para que muestre tu nombre.",
+      "exerciseEn": "Change the greeting to display your name.",
+      "hints": [
+        "Busca el texto que se muestra en pantalla.",
+        "Las comillas delimitan texto literal.",
+        "Conserva la llamada de salida y cambia su argumento."
+      ],
+      "hintsEn": [
+        "Change the greeting to display your name.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "javascript-variables",
+      "concept": "variables",
+      "title": "Variables y tipos",
+      "titleEn": "Variables and types",
+      "minutes": 6,
+      "body": "let permite reasignar una variable. const impide reasignar ese vínculo, pero no vuelve inmutable el contenido de un objeto. Usa const cuando no necesitas reasignar.",
+      "bodyEn": "A variable gives a name to a value. Assignment updates that binding. Distinguish numeric values from strings before performing arithmetic. let allows reassignment; const prevents rebinding. + may concatenate strings.",
+      "code": "let puntos = 12;\npuntos += 3;\nconsole.log(puntos);",
+      "pitfall": "El operador + concatena si uno de sus operandos es texto: \"12\" + 3 produce \"123\".",
+      "pitfallEn": "+ may concatenate strings.",
+      "exercise": "Empieza con 20 puntos, resta 4 y muestra el resultado.",
+      "exerciseEn": "Start with 20 points, subtract 4 and print the result.",
+      "hints": [
+        "Necesitas una asignación inicial y una resta.",
+        "Haz la operación antes de mostrar el resultado.",
+        "El resultado esperado es 16."
+      ],
+      "hintsEn": [
+        "Start with 20 points, subtract 4 and print the result.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "javascript-inicio"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "javascript-condicionales",
+      "concept": "condicionales",
+      "title": "Tomar decisiones",
+      "titleEn": "Making decisions",
+      "minutes": 7,
+      "body": "if elige una rama según la condición. === compara sin coerción de tipos. Por ejemplo, 5 === \"5\" es false. Las llaves hacen explícito el bloque.",
+      "bodyEn": "A conditional selects a branch. Compare the value and then execute the matching block. Test both branches and the exact boundary. Prefer === to avoid implicit type coercion.",
+      "code": "const edad = 17;\nif (edad >= 18) {\n  console.log(\"Mayor\");\n} else {\n  console.log(\"Menor\");\n}",
+      "pitfall": "== puede convertir tipos. Prefiere === cuando deseas una comparación estricta.",
+      "pitfallEn": "Prefer === to avoid implicit type coercion.",
+      "exercise": "Clasifica una temperatura: si es mayor a 25 muestra \"Calor\"; en otro caso, \"Templado\".",
+      "exerciseEn": "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+      "hints": [
+        "Necesitas una condición que compare números.",
+        "La comparación debe ser estrictamente mayor: >.",
+        "Comprueba también el caso exacto de 25."
+      ],
+      "hintsEn": [
+        "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "javascript-variables"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "javascript-bucles",
+      "concept": "bucles",
+      "title": "Repetir con for",
+      "titleEn": "Repeating with for",
+      "minutes": 8,
+      "body": "El for clásico tiene inicio, condición y actualización. Para recorrer los valores de un array también existe for...of. for...in recorre claves y no es su equivalente.",
+      "bodyEn": "A loop repeats a block. Trace its initial state, continuation condition and update. Always verify where it stops. The classic for has initialization, condition and update. The condition is checked before every iteration.",
+      "code": "for (let i = 1; i <= 5; i++) {\n  console.log(i);\n}",
+      "pitfall": "Usar <= notas.length como límite puede intentar leer un elemento inexistente.",
+      "pitfallEn": "The condition is checked before every iteration.",
+      "exercise": "Imprime los números pares del 2 al 10, uno por línea.",
+      "exerciseEn": "Print the even numbers from 2 to 10, one per line.",
+      "hints": [
+        "Piensa en el primer número, el último y el salto.",
+        "Avanza de dos en dos.",
+        "El resultado debe tener cinco líneas: 2, 4, 6, 8, 10."
+      ],
+      "hintsEn": [
+        "Print the even numbers from 2 to 10, one per line.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "javascript-condicionales"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "javascript-funciones",
+      "concept": "funciones",
+      "title": "Funciones",
+      "titleEn": "Functions",
+      "minutes": 9,
+      "body": "Una función puede recibir parámetros y devolver un resultado con return. Si llega al final sin return, devuelve undefined. La función puede llamarse varias veces con distintos argumentos.",
+      "bodyEn": "A function groups a reusable operation. Parameters receive inputs; return supplies a result to the caller. Printing and returning are different.",
+      "code": "function doble(numero) {\n  return numero * 2;\n}\nconsole.log(doble(7));",
+      "pitfall": "console.log muestra un valor pero no lo devuelve al código que llama.",
+      "pitfallEn": "Printing and returning are different.",
+      "exercise": "Escribe una función triple que devuelva tres veces su argumento. Pruébala con 4 y con 0.",
+      "exerciseEn": "Write a triple function. Test it with 4 and 0.",
+      "hints": [
+        "El dato de entrada será un parámetro.",
+        "Multiplica ese parámetro por 3.",
+        "Devuelve el resultado con return; no lo muestres dentro de la función."
+      ],
+      "hintsEn": [
+        "Write a triple function. Test it with 4 and 0.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "javascript-bucles"
+      ],
+      "level": "Básico"
+    },
+    {
+      "id": "javascript-colecciones",
+      "concept": "colecciones",
+      "title": "Colecciones",
+      "titleEn": "Collections",
+      "minutes": 10,
+      "body": "Los arrays empiezan en el índice cero. push añade al final; length cuenta elementos. Un array declarado con const puede cambiar su contenido, aunque no puedes reasignar la variable.",
+      "bodyEn": "A collection stores several values. Access positions using the language’s indexing rules and check bounds before reading. Arrays can grow. const protects the binding, not the array contents. Out-of-range reads may return undefined.",
+      "code": "const notas = [12, 16, 18];\nnotas.push(20);\nconsole.log(notas[0]);\nconsole.log(notas.length);",
+      "pitfall": "Leer notas[99] normalmente devuelve undefined; no comprueba el límite por ti.",
+      "pitfallEn": "Out-of-range reads may return undefined.",
+      "exercise": "Crea una colección con 3 notas y muestra la primera. Explica por qué elegiste ese índice.",
+      "exerciseEn": "Create a collection of 3 grades and print the first. Explain your chosen index.",
+      "hints": [
+        "Revisa dónde comienza la indexación de este lenguaje.",
+        "La primera posición no coincide con la cantidad de elementos.",
+        "Lua suele empezar en 1; los otros lenguajes de esta ruta, en 0."
+      ],
+      "hintsEn": [
+        "Create a collection of 3 grades and print the first. Explain your chosen index.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "javascript-funciones"
+      ],
+      "level": "Básico"
+    }
+  ]
+}

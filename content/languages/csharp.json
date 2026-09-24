@@ -1,0 +1,179 @@
+{
+  "name": "C#",
+  "mark": "C#",
+  "color": "#c7a4ed",
+  "desc": "Tipos sólidos, aplicaciones completas.",
+  "en": "Strong types, complete applications.",
+  "ext": "cs",
+  "runner": null,
+  "id": "csharp",
+  "version": 1,
+  "lessons": [
+    {
+      "id": "csharp-inicio",
+      "concept": "inicio",
+      "title": "Primer programa",
+      "titleEn": "First program",
+      "minutes": 5,
+      "body": "Console.WriteLine muestra una línea. Este ejemplo usa una clase Program y un método Main explícitos para que el punto de entrada sea visible. using permite referirse a tipos de un espacio de nombres.",
+      "bodyEn": "Run the complete example and trace each instruction from top to bottom. Text literals use quotes; identifiers refer to names in the program.",
+      "code": "using System;\nclass Program {\n    static void Main() {\n        Console.WriteLine(\"Hola, Sintavra\");\n    }\n}",
+      "pitfall": "WriteLine distingue mayúsculas. writeline no identifica el mismo método.",
+      "pitfallEn": "Text literals use quotes; identifiers refer to names in the program.",
+      "exercise": "Cambia el saludo para que muestre tu nombre.",
+      "exerciseEn": "Change the greeting to display your name.",
+      "hints": [
+        "Busca el texto que se muestra en pantalla.",
+        "Las comillas delimitan texto literal.",
+        "Conserva la llamada de salida y cambia su argumento."
+      ],
+      "hintsEn": [
+        "Change the greeting to display your name.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "csharp-variables",
+      "concept": "variables",
+      "title": "Variables y tipos",
+      "titleEn": "Variables and types",
+      "minutes": 6,
+      "body": "C# tiene tipado estático. int guarda enteros, string texto y bool valores lógicos. var permite inferir el tipo al compilar; no convierte la variable en una variable de tipo dinámico.",
+      "bodyEn": "A variable gives a name to a value. Assignment updates that binding. Distinguish numeric values from strings before performing arithmetic. Types are checked before execution. Integer division such as 5 / 2 yields 2.",
+      "code": "using System;\nclass Program {\n    static void Main() {\n        int puntos = 12;\n        puntos += 3;\n        Console.WriteLine(puntos);\n    }\n}",
+      "pitfall": "var puntos = 12 infiere int; después no puedes asignarle una cadena.",
+      "pitfallEn": "Integer division such as 5 / 2 yields 2.",
+      "exercise": "Empieza con 20 puntos, resta 4 y muestra el resultado.",
+      "exerciseEn": "Start with 20 points, subtract 4 and print the result.",
+      "hints": [
+        "Necesitas una asignación inicial y una resta.",
+        "Haz la operación antes de mostrar el resultado.",
+        "El resultado esperado es 16."
+      ],
+      "hintsEn": [
+        "Start with 20 points, subtract 4 and print the result.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "csharp-inicio"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "csharp-condicionales",
+      "concept": "condicionales",
+      "title": "Tomar decisiones",
+      "titleEn": "Making decisions",
+      "minutes": 7,
+      "body": "La condición de if debe ser booleana. Un entero no se convierte automáticamente a bool. == compara valores; el significado preciso depende del tipo y sus operadores.",
+      "bodyEn": "A conditional selects a branch. Compare the value and then execute the matching block. Test both branches and the exact boundary. Use == for equality, not assignment.",
+      "code": "using System;\nclass Program {\n    static void Main() {\n        int edad = 17;\n        if (edad >= 18) Console.WriteLine(\"Mayor\");\n        else Console.WriteLine(\"Menor\");\n    }\n}",
+      "pitfall": "if (1) no es una condición válida en C#.",
+      "pitfallEn": "Use == for equality, not assignment.",
+      "exercise": "Clasifica una temperatura: si es mayor a 25 muestra \"Calor\"; en otro caso, \"Templado\".",
+      "exerciseEn": "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+      "hints": [
+        "Necesitas una condición que compare números.",
+        "La comparación debe ser estrictamente mayor: >.",
+        "Comprueba también el caso exacto de 25."
+      ],
+      "hintsEn": [
+        "Classify a temperature: above 25 print \"Hot\"; otherwise print \"Mild\".",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "csharp-variables"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "csharp-bucles",
+      "concept": "bucles",
+      "title": "Repetir con for",
+      "titleEn": "Repeating with for",
+      "minutes": 8,
+      "body": "for permite controlar inicio, condición y actualización. foreach sirve para recorrer elementos de una colección. No son intercambiables en todos los casos.",
+      "bodyEn": "A loop repeats a block. Trace its initial state, continuation condition and update. Always verify where it stops. The classic for has initialization, condition and update. The condition is checked before every iteration.",
+      "code": "using System;\nclass Program {\n    static void Main() {\n        for (int i = 1; i <= 5; i++) {\n            Console.WriteLine(i);\n        }\n    }\n}",
+      "pitfall": "El límite debe ser menor que Count al acceder por índice.",
+      "pitfallEn": "The condition is checked before every iteration.",
+      "exercise": "Imprime los números pares del 2 al 10, uno por línea.",
+      "exerciseEn": "Print the even numbers from 2 to 10, one per line.",
+      "hints": [
+        "Piensa en el primer número, el último y el salto.",
+        "Avanza de dos en dos.",
+        "El resultado debe tener cinco líneas: 2, 4, 6, 8, 10."
+      ],
+      "hintsEn": [
+        "Print the even numbers from 2 to 10, one per line.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "csharp-condicionales"
+      ],
+      "level": "Fundamentos"
+    },
+    {
+      "id": "csharp-funciones",
+      "concept": "funciones",
+      "title": "Funciones",
+      "titleEn": "Functions",
+      "minutes": 9,
+      "body": "Un método static pertenece al tipo y se puede llamar aquí sin crear un objeto. int indica el tipo de resultado; numero es el parámetro. return finaliza la llamada.",
+      "bodyEn": "A function groups a reusable operation. Parameters receive inputs; return supplies a result to the caller. Printing and returning are different.",
+      "code": "using System;\nclass Program {\n    static int Doble(int numero) { return numero * 2; }\n    static void Main() { Console.WriteLine(Doble(7)); }\n}",
+      "pitfall": "Un método void no devuelve un resultado de tipo int.",
+      "pitfallEn": "Printing and returning are different.",
+      "exercise": "Escribe una función triple que devuelva tres veces su argumento. Pruébala con 4 y con 0.",
+      "exerciseEn": "Write a triple function. Test it with 4 and 0.",
+      "hints": [
+        "El dato de entrada será un parámetro.",
+        "Multiplica ese parámetro por 3.",
+        "Devuelve el resultado con return; no lo muestres dentro de la función."
+      ],
+      "hintsEn": [
+        "Write a triple function. Test it with 4 and 0.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "csharp-bucles"
+      ],
+      "level": "Básico"
+    },
+    {
+      "id": "csharp-colecciones",
+      "concept": "colecciones",
+      "title": "Colecciones",
+      "titleEn": "Collections",
+      "minutes": 10,
+      "body": "List<int> guarda enteros y puede crecer. Add añade al final y Count cuenta elementos. Un array tiene Length y tamaño fijo; una lista tiene Count.",
+      "bodyEn": "A collection stores several values. Access positions using the language’s indexing rules and check bounds before reading. List<int> uses Add and Count; arrays use Length.",
+      "code": "using System;\nusing System.Collections.Generic;\nclass Program {\n    static void Main() {\n        var notas = new List<int> {12, 16, 18};\n        notas.Add(20);\n        Console.WriteLine(notas[0]);\n        Console.WriteLine(notas.Count);\n    }\n}",
+      "pitfall": "El primer elemento está en [0]; acceder fuera de rango genera una excepción.",
+      "pitfallEn": "List<int> uses Add and Count; arrays use Length.",
+      "exercise": "Crea una colección con 3 notas y muestra la primera. Explica por qué elegiste ese índice.",
+      "exerciseEn": "Create a collection of 3 grades and print the first. Explain your chosen index.",
+      "hints": [
+        "Revisa dónde comienza la indexación de este lenguaje.",
+        "La primera posición no coincide con la cantidad de elementos.",
+        "Lua suele empezar en 1; los otros lenguajes de esta ruta, en 0."
+      ],
+      "hintsEn": [
+        "Create a collection of 3 grades and print the first. Explain your chosen index.",
+        "Trace the example and change one part at a time.",
+        "Check the input, boundary conditions and expected output."
+      ],
+      "prerequisites": [
+        "csharp-funciones"
+      ],
+      "level": "Básico"
+    }
+  ]
+}

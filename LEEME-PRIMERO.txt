@@ -1,0 +1,28 @@
+SINTAVRA — CÓDIGO FUENTE POR ARCHIVOS
+
+Este ZIP contiene el proyecto desarrollado, no un instalador APK/EXE.
+No es todavía la plataforma completa descrita en los tres documentos.
+
+EMPIEZA AQUÍ
+1. README.md: instalar dependencias, desarrollar, probar y compilar.
+2. docs/ESTADO-ENTREGA.md: qué funciona y qué falta.
+3. docs/APP-UNICA.md: condición «solo instalar la app» y sus requisitos pendientes.
+4. docs/REQUISITOS-EXPANSION.txt: tu último documento conservado completo.
+5. public/sintavra-manual.html: manual de los siete lenguajes, se abre directamente sin instalar nada.
+
+ARCHIVOS PRINCIPALES
+components/sintavra/     Interfaz, editor, tutor, pruebas y progreso local.
+lib/education/          Diccionario contextual, preguntas y corrección offline.
+lib/core/               Reglas de dominio, XP, repaso y terminal.
+content/languages/      42 lecciones en siete módulos.
+app/api/                Persistencia, evaluación y sincronización de cuenta.
+db/ y drizzle/          Esquema SQLite y migraciones.
+public/runtime/         Python y Lua incluidos, con versiones fijadas.
+tests/                  Pruebas automatizadas.
+scripts/                Construcción y exportación.
+
+Los recursos y librerías necesarios se declaran en package.json y pnpm-lock.yaml.
+node_modules no está incluido. Para desarrollar hacen falta Node.js y pnpm.
+Eso es una necesidad del desarrollador; la app nativa final no debería exigirlos al estudiante.
+
+No se creó un repositorio de GitHub ni se habilitó su OAuth. No hay tokens ni claves privadas dentro del paquete.
